@@ -51,8 +51,8 @@ export function LearningEcosystem() {
         <ScrollReveal delay={0.15} className="mt-12 flex justify-center lg:mt-14">
           <PhoneMockup
             size="wide"
-            screenshotSrc="/examples/instructors-app.jpg"
-            screenshotAlt="brAInify app — lessons, progress, and mentor"
+            screenshotSrc="/examples/app-preview.png"
+            screenshotAlt="brAInify app — lessons, progress, and AI mentor"
             className="w-full max-w-[min(100%,520px)]"
           />
         </ScrollReveal>
