@@ -77,8 +77,15 @@ export type LearningPath = {
   tagColor: string
   description: string
   highlights: string[]
+  /** Google Drive share link — Explore Path opens this video */
+  videoUrl: string
 }
 
+/**
+ * Path intro videos (Google Drive).
+ * In Drive: open video → Share → General access → Anyone with the link → Copy link.
+ * Paste the full URL into `videoUrl` for each path.
+ */
 export const learningPaths: LearningPath[] = [
   {
     id: 'ai',
@@ -89,6 +96,7 @@ export const learningPaths: LearningPath[] = [
     description:
       'Learn how to use AI tools, write powerful prompts, automate tasks, solve problems faster, and build real AI-powered workflows.',
     highlights: ['AI tools', 'Prompt writing', 'Automation & workflows'],
+    videoUrl: '',
   },
   {
     id: 'creator',
@@ -99,6 +107,7 @@ export const learningPaths: LearningPath[] = [
     description:
       'Learn how to create content using AI, including videos, scripts, visuals, social media posts, content plans, and creative campaigns.',
     highlights: ['Video & scripts', 'Visuals & social', 'Content plans'],
+    videoUrl: '',
   },
   {
     id: 'marketing',
@@ -109,6 +118,7 @@ export const learningPaths: LearningPath[] = [
     description:
       'Learn how to promote brands and products online using social media, ads, content strategy, funnels, analytics, and AI-powered marketing tools.',
     highlights: ['Social & ads', 'Funnels & strategy', 'Analytics & AI tools'],
+    videoUrl: '',
   },
   {
     id: 'economy',
@@ -119,6 +129,7 @@ export const learningPaths: LearningPath[] = [
     description:
       'Learn how the modern online economy works, including digital business models, online platforms, remote work, e-commerce, and AI-driven opportunities.',
     highlights: ['Business models', 'E-commerce', 'Remote & AI opportunities'],
+    videoUrl: '',
   },
   {
     id: 'financial',
@@ -129,6 +140,7 @@ export const learningPaths: LearningPath[] = [
     description:
       'Learn the basics of money management, budgeting, saving, investing concepts, financial planning, and making smarter financial decisions.',
     highlights: ['Budgeting & saving', 'Investing basics', 'Financial planning'],
+    videoUrl: '',
   },
   {
     id: 'youth',
@@ -139,6 +151,7 @@ export const learningPaths: LearningPath[] = [
     description:
       'A beginner-friendly path designed for young learners to understand AI, digital skills, creativity, problem-solving, and future-ready learning in a simple way.',
     highlights: ['AI basics', 'Digital skills', 'Creativity & problem-solving'],
+    videoUrl: '',
   },
 ]
 
