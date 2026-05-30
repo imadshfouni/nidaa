@@ -24,7 +24,7 @@ export function HeroAppScreen() {
         </div>
       </div>
       <div className="mt-3 space-y-2">
-        {['AI Path', 'Creator Path', 'Business Builder'].map((path) => (
+        {['The AI Path', 'The Creator Path', 'Digital Marketing'].map((path) => (
           <div
             key={path}
             className="flex items-center justify-between rounded-lg border border-white/5 bg-white/[0.03] px-3 py-2"

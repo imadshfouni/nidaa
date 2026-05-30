@@ -2,10 +2,10 @@ import type { LucideIcon } from 'lucide-react'
 import {
   Briefcase,
   Cpu,
+  Globe,
   GraduationCap,
   Palette,
-  Rocket,
-  Zap,
+  Wallet,
 } from 'lucide-react'
 
 export const navLinks = [
@@ -83,62 +83,62 @@ export const learningPaths: LearningPath[] = [
   {
     id: 'ai',
     icon: Cpu,
-    title: 'AI Path',
+    title: 'The AI Path',
     tag: 'BUILDERS & INNOVATORS',
     tagColor: 'text-cyan-400',
     description:
-      'Master AI fundamentals, automation, and intelligent workflows from beginner to advanced.',
-    highlights: ['AI workflows', 'Prompt engineering', 'Agent building'],
+      'Learn how to use AI tools, write powerful prompts, automate tasks, solve problems faster, and build real AI-powered workflows.',
+    highlights: ['AI tools', 'Prompt writing', 'Automation & workflows'],
   },
   {
     id: 'creator',
     icon: Palette,
-    title: 'Creator Path',
+    title: 'The Creator Path',
     tag: 'CREATORS & BRANDS',
     tagColor: 'text-fuchsia-400',
     description:
-      'Build your brand with AI-powered content, video, design, and audience growth strategies.',
-    highlights: ['Content systems', 'Video & design', 'Audience growth'],
+      'Learn how to create content using AI, including videos, scripts, visuals, social media posts, content plans, and creative campaigns.',
+    highlights: ['Video & scripts', 'Visuals & social', 'Content plans'],
   },
   {
-    id: 'business',
+    id: 'marketing',
     icon: Briefcase,
-    title: 'Business Builder Path',
-    tag: 'ENTREPRENEURS',
+    title: 'The Digital Marketing Path',
+    tag: 'MARKETERS & GROWTH',
     tagColor: 'text-blue-400',
     description:
-      'Launch and scale ventures using AI for strategy, operations, marketing, and leadership.',
-    highlights: ['Go-to-market', 'Ops automation', 'Leadership'],
+      'Learn how to promote brands and products online using social media, ads, content strategy, funnels, analytics, and AI-powered marketing tools.',
+    highlights: ['Social & ads', 'Funnels & strategy', 'Analytics & AI tools'],
   },
   {
-    id: 'freelancer',
-    icon: Zap,
-    title: 'Freelancer Path',
-    tag: 'INDEPENDENT PROS',
-    tagColor: 'text-violet-400',
+    id: 'economy',
+    icon: Globe,
+    title: 'The Digital Economy Path',
+    tag: 'DIGITAL BUSINESS',
+    tagColor: 'text-emerald-400',
     description:
-      'Offer high-value AI services, win clients, and build a sustainable independent career.',
-    highlights: ['Client acquisition', 'Service packaging', 'Pricing'],
+      'Learn how the modern online economy works, including digital business models, online platforms, remote work, e-commerce, and AI-driven opportunities.',
+    highlights: ['Business models', 'E-commerce', 'Remote & AI opportunities'],
+  },
+  {
+    id: 'financial',
+    icon: Wallet,
+    title: 'The Financial Literacy Path',
+    tag: 'MONEY & PLANNING',
+    tagColor: 'text-amber-400',
+    description:
+      'Learn the basics of money management, budgeting, saving, investing concepts, financial planning, and making smarter financial decisions.',
+    highlights: ['Budgeting & saving', 'Investing basics', 'Financial planning'],
   },
   {
     id: 'youth',
     icon: GraduationCap,
-    title: 'Youth Path',
+    title: 'The Youth Path',
     tag: 'NEXT GENERATION',
-    tagColor: 'text-amber-400',
+    tagColor: 'text-violet-400',
     description:
-      'Future-proof the next generation with safe, engaging AI literacy and creative skills.',
-    highlights: ['Safe AI literacy', 'Creative projects', 'Digital confidence'],
-  },
-  {
-    id: 'future',
-    icon: Rocket,
-    title: 'Future Skills Path',
-    tag: 'CAREER READY',
-    tagColor: 'text-emerald-400',
-    description:
-      'Stay ahead with emerging tech, digital fluency, and cross-disciplinary innovation skills.',
-    highlights: ['Emerging tech', 'Digital fluency', 'Innovation'],
+      'A beginner-friendly path designed for young learners to understand AI, digital skills, creativity, problem-solving, and future-ready learning in a simple way.',
+    highlights: ['AI basics', 'Digital skills', 'Creativity & problem-solving'],
   },
 ]
 
