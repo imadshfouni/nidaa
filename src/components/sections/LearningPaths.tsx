@@ -2,14 +2,21 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 import { learningPaths } from '@/data/content'
-import { APP_URL, googleDriveVideoUrl } from '@/config/site'
+import {
+  APP_URL,
+  googleDriveEmbedUrl,
+  googleDriveVideoUrl,
+} from '@/config/site'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
+import { VideoModal } from '@/components/ui/VideoModal'
 
 export function LearningPaths() {
   const [activeId, setActiveId] = useState(learningPaths[0].id)
+  const [videoOpen, setVideoOpen] = useState(false)
   const active = learningPaths.find((p) => p.id === activeId) ?? learningPaths[0]
-  const activeVideoUrl = googleDriveVideoUrl(active.videoUrl)
+  const activeEmbedUrl = googleDriveEmbedUrl(active.videoUrl)
+  const activeViewUrl = googleDriveVideoUrl(active.videoUrl)
 
   return (
     <section id="paths" className="section-padding bg-navy-mid/40">
@@ -24,7 +31,7 @@ export function LearningPaths() {
           <div className="space-y-2">
             {learningPaths.map((path) => {
               const isActive = path.id === activeId
-              const hasVideo = Boolean(googleDriveVideoUrl(path.videoUrl))
+              const hasVideo = Boolean(googleDriveEmbedUrl(path.videoUrl))
               return (
                 <button
                   key={path.id}
@@ -98,8 +105,8 @@ export function LearningPaths() {
               </div>
 
               <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:flex-wrap">
-                {activeVideoUrl ? (
-                  <Button href={activeVideoUrl} external>
+                {activeEmbedUrl ? (
+                  <Button onClick={() => setVideoOpen(true)}>
                     <Play size={16} fill="currentColor" />
                     Explore Path
                     <ArrowRight size={16} />
@@ -115,6 +122,14 @@ export function LearningPaths() {
           </AnimatePresence>
         </div>
       </div>
+
+      <VideoModal
+        isOpen={videoOpen}
+        onClose={() => setVideoOpen(false)}
+        embedUrl={activeEmbedUrl}
+        viewUrl={activeViewUrl}
+        title={`${active.title} — Intro`}
+      />
     </section>
   )
 }

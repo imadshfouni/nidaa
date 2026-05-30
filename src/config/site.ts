@@ -10,18 +10,25 @@ export const PLAY_STORE_URL =
 /** Official app icon (App Store / Play Store) */
 export const LOGO_SRC = '/brainify-logo.png'
 
-/**
- * Normalize a Google Drive share link for opening the video in a new tab.
- * Paste the link from Drive → Share → Copy link.
- */
-export function googleDriveVideoUrl(shareOrViewUrl: string): string {
+/** Extract file id from a Google Drive share or view URL. */
+export function googleDriveFileId(shareOrViewUrl: string): string | null {
   const trimmed = shareOrViewUrl.trim()
-  if (!trimmed) return ''
+  if (!trimmed) return null
 
   const idMatch = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/)
-  if (idMatch) {
-    return `https://drive.google.com/file/d/${idMatch[1]}/view`
-  }
+  return idMatch?.[1] ?? null
+}
 
-  return trimmed
+/** Open the file on Google Drive in a new tab (fallback). */
+export function googleDriveVideoUrl(shareOrViewUrl: string): string {
+  const id = googleDriveFileId(shareOrViewUrl)
+  if (id) return `https://drive.google.com/file/d/${id}/view`
+  return shareOrViewUrl.trim()
+}
+
+/** Embed URL for in-page playback (iframe). File must be shared: anyone with the link. */
+export function googleDriveEmbedUrl(shareOrViewUrl: string): string {
+  const id = googleDriveFileId(shareOrViewUrl)
+  if (!id) return ''
+  return `https://drive.google.com/file/d/${id}/preview`
 }
