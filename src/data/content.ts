@@ -149,7 +149,7 @@ export const ecosystemFeatures = [
   },
   {
     title: 'Lessons + simulations',
-    description: 'Learn the idea, then practice in live scenarios.',
+    description: 'Learn the idea, then practice it live.',
   },
   {
     title: 'XP & streaks',

@@ -36,7 +36,7 @@ export function Navbar() {
     >
       <nav className="container-wide flex items-center justify-between px-5 py-4 sm:px-8 lg:px-12">
         <a href="#" className="flex items-center">
-          <Logo size="md" showTagline />
+          <Logo size="md" />
         </a>
 
         <ul className="hidden items-center gap-8 lg:flex">
@@ -57,7 +57,7 @@ export function Navbar() {
             <LogIn size={16} />
             Log in
           </Button>
-          <Button href={APP_URL}>Start Learning</Button>
+          <Button href={APP_URL}>Join for free</Button>
         </div>
 
         <button
@@ -91,7 +91,7 @@ export function Navbar() {
               Log in
             </Button>
             <Button href={APP_URL} className="w-full">
-              Start Learning
+              Join for free
             </Button>
           </div>
         </div>

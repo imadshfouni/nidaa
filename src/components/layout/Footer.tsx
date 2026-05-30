@@ -1,6 +1,9 @@
+import { LogIn } from 'lucide-react'
 import { footerLinks } from '@/data/content'
+import { APP_URL } from '@/config/site'
 import { Logo } from '@/components/ui/Logo'
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges'
+import { Button } from '@/components/ui/Button'
 
 export function Footer() {
   return (
@@ -83,20 +86,24 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-12 flex flex-col items-center justify-between gap-4 border-t border-white/[0.06] pt-8 sm:flex-row">
-          <p className="text-sm text-slate-600">
-            © {new Date().getFullYear()} brAInify. All rights reserved.
-          </p>
-          <p className="text-sm text-slate-600">
+        <div className="mt-12 border-t border-white/[0.06] pt-8">
+          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
+            <p className="text-sm text-slate-600">
+              © {new Date().getFullYear()} brAInify. All rights reserved.
+            </p>
+            <Button variant="login" href={APP_URL} className="min-w-[200px]">
+              <LogIn size={16} />
+              Log in
+            </Button>
             <a
               href="https://www.brAInify.world"
-              className="transition-colors hover:text-brand-400"
+              className="text-sm text-slate-600 transition-colors hover:text-cyan-400"
               target="_blank"
               rel="noopener noreferrer"
             >
               www.brAInify.world
             </a>
-          </p>
+          </div>
         </div>
       </div>
     </footer>

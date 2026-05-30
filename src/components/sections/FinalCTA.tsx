@@ -30,13 +30,11 @@ export function FinalCTA() {
             </p>
 
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Button href={APP_URL}>
-                Start Learning
-              </Button>
               <Button variant="login" href={APP_URL}>
                 <LogIn size={16} />
                 Log in
               </Button>
+              <Button href={APP_URL}>Join for free</Button>
             </div>
 
             <div className="mt-10 flex justify-center">

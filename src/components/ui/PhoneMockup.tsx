@@ -48,7 +48,7 @@ export function PhoneMockup({
 }: PhoneMockupProps) {
   const widthClass =
     maxWidth ??
-    (size === 'wide' ? 'max-w-[min(100%,440px)]' : 'max-w-[320px]')
+    (size === 'wide' ? 'max-w-[min(100%,520px)]' : 'max-w-[320px]')
   return (
     <motion.div
       className={`relative mx-auto w-full ${widthClass} ${className}`}

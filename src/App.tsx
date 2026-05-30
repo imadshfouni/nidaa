@@ -8,7 +8,7 @@ import { LearningPaths } from '@/components/sections/LearningPaths'
 import { LearningEcosystem } from '@/components/sections/LearningEcosystem'
 import { Languages } from '@/components/sections/Languages'
 import { ToolsSection } from '@/components/sections/ToolsSection'
-import { ToolExamples } from '@/components/sections/ToolExamples'
+import { MobileLoginBar } from '@/components/layout/MobileLoginBar'
 import { ProofOfSkill } from '@/components/sections/ProofOfSkill'
 import { Stats } from '@/components/sections/Stats'
 import { FAQ } from '@/components/sections/FAQ'
@@ -19,7 +19,7 @@ function App() {
     <>
       <BackgroundMesh />
       <Navbar />
-      <main>
+      <main className="pb-20 lg:pb-0">
         <Hero />
         <ValueProposition />
         <SpecialtyExperts />
@@ -27,13 +27,13 @@ function App() {
         <LearningEcosystem />
         <Languages />
         <ToolsSection />
-        <ToolExamples />
         <ProofOfSkill />
         <Stats />
         <FAQ />
         <FinalCTA />
       </main>
       <Footer />
+      <MobileLoginBar />
     </>
   )
 }

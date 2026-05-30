@@ -2,7 +2,6 @@ import { motion } from 'framer-motion'
 import { ArrowRight } from 'lucide-react'
 import { AppStoreBadges } from '@/components/ui/AppStoreBadges'
 import { Button } from '@/components/ui/Button'
-import { PhoneMockup } from '@/components/ui/PhoneMockup'
 import { APP_URL } from '@/config/site'
 
 export function Hero() {
@@ -49,11 +48,8 @@ export function Hero() {
             transition={{ delay: 0.45 }}
           >
             <Button href={APP_URL}>
-              Start Learning
+              Join for free
               <ArrowRight size={18} />
-            </Button>
-            <Button variant="outline" href="#paths">
-              Explore Paths
             </Button>
           </motion.div>
 
@@ -68,11 +64,22 @@ export function Hero() {
         </div>
 
         <motion.div
+          className="relative"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
-          <PhoneMockup maxWidth="max-w-[320px]" />
+          <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue-600/25 to-cyan-500/15 blur-2xl" />
+          <div className="relative overflow-hidden rounded-2xl border border-cyan-500/25 bg-navy-card p-2 shadow-2xl shadow-blue-500/20">
+            <img
+              src="/examples/app-preview.png"
+              alt="brAInify app preview"
+              className="w-full rounded-xl object-contain"
+              width={343}
+              height={361}
+              loading="eager"
+            />
+          </div>
         </motion.div>
       </div>
     </section>
