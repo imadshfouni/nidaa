@@ -1,0 +1,58 @@
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Plus Jakarta Sans', Inter, system-ui, sans-serif;
+  --color-navy: #020617;
+  --color-navy-mid: #050a18;
+  --color-navy-card: #0b1224;
+  --color-electric: #3b82f6;
+  --color-cyan-glow: #22d3ee;
+  --color-accent-orange: #f97316;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply m-0 min-h-screen overflow-x-hidden bg-navy font-sans text-slate-300 antialiased;
+  }
+
+  ::selection {
+    @apply bg-blue-500/30 text-white;
+  }
+}
+
+@layer utilities {
+  .text-gradient-hero {
+    @apply bg-gradient-to-r from-white via-blue-100 to-cyan-300 bg-clip-text text-transparent;
+  }
+
+  .text-gradient-accent {
+    @apply bg-gradient-to-r from-cyan-400 to-blue-500 bg-clip-text text-transparent;
+  }
+
+  .glass-panel {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+  }
+
+  .glass-panel-glow {
+    @apply rounded-2xl border border-white/[0.08] bg-white/[0.03] backdrop-blur-xl;
+    box-shadow:
+      0 0 0 1px rgba(34, 211, 238, 0.12),
+      0 0 48px -12px rgba(59, 130, 246, 0.25);
+  }
+
+  .eyebrow {
+    @apply text-[11px] font-semibold uppercase tracking-[0.2em] text-cyan-400/90;
+  }
+
+  .section-padding {
+    @apply px-5 py-20 sm:px-8 md:py-24 lg:px-12 xl:px-16;
+  }
+
+  .container-wide {
+    @apply mx-auto w-full max-w-6xl;
+  }
+}
