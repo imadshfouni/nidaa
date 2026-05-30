@@ -26,7 +26,12 @@ export type Instructor = {
 /** AI mentors inside brAInify — names & roles match the live app */
 export const instructors: Instructor[] = [
   { id: 'ryan', name: 'Ryan', role: 'AI' },
-  { id: 'sarah', name: 'Sarah', role: 'Content Creator' },
+  {
+    id: 'sarah',
+    name: 'Sarah',
+    role: 'Content Creator',
+    image: '/instructors/sarah.png',
+  },
   { id: 'adam', name: 'Adam', role: 'Digital Marketing' },
   {
     id: 'daniel',
@@ -41,8 +46,23 @@ export const instructors: Instructor[] = [
     role: 'AI Youth',
     image: '/instructors/luke.png',
   },
-  { id: 'carol', name: 'Carol', role: 'Tools' },
+  {
+    id: 'carol',
+    name: 'Carol',
+    role: 'Tools',
+    image: '/instructors/carol.png',
+  },
 ]
+
+/** Featured pair — Carol left, Sarah right */
+export const featuredInstructors: Instructor[] = [
+  instructors.find((i) => i.id === 'carol')!,
+  instructors.find((i) => i.id === 'sarah')!,
+]
+
+export const otherInstructors = instructors.filter(
+  (i) => i.id !== 'carol' && i.id !== 'sarah',
+)
 
 export type LearningPath = {
   id: string
