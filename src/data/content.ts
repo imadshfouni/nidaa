@@ -49,7 +49,12 @@ export const instructors: Instructor[] = [
     role: 'Financial Literacy',
     image: '/instructors/daniel.png',
   },
-  { id: 'steve', name: 'Steve', role: 'Digital Economy' },
+  {
+    id: 'steve',
+    name: 'Steve',
+    role: 'Digital Economy',
+    image: '/instructors/steve.png',
+  },
   {
     id: 'luke',
     name: 'Luke',
