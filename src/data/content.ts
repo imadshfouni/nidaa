@@ -41,7 +41,7 @@ export const instructors: Instructor[] = [
     id: 'adam',
     name: 'Adam',
     role: 'Digital Marketing',
-    image: '/instructors/luke.png',
+    image: '/instructors/adam.png',
   },
   {
     id: 'daniel',
@@ -59,7 +59,7 @@ export const instructors: Instructor[] = [
     id: 'luke',
     name: 'Luke',
     role: 'AI Youth',
-    image: '/instructors/adam.png',
+    image: '/instructors/luke.png',
   },
   {
     id: 'carol',
