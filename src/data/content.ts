@@ -10,37 +10,41 @@ import {
 
 export const navLinks = [
   { label: 'Paths', href: '#paths' },
+  { label: 'Instructors', href: '#instructors' },
   { label: 'Ecosystem', href: '#ecosystem' },
   { label: 'Tools', href: '#tools' },
-  { label: 'Roadmap', href: '#roadmap' },
   { label: 'FAQ', href: '#faq' },
 ] as const
 
-export const experts = [
+/** AI mentors inside brAInify — names & roles match the live app */
+export const instructors = [
+  { id: 'ryan', name: 'Ryan', role: 'AI', image: '/instructors/ryan.jpg' },
   {
-    name: 'AI Specialist',
-    specialty: 'Automation & Agents',
-    color: 'from-blue-500 to-cyan-400',
-    ring: 'ring-blue-500/40',
+    id: 'sarah',
+    name: 'Sarah',
+    role: 'Content Creator',
+    image: '/instructors/sarah.jpg',
   },
   {
-    name: 'Creator Coach',
-    specialty: 'Content & Brand',
-    color: 'from-emerald-500 to-teal-400',
-    ring: 'ring-emerald-500/40',
+    id: 'adam',
+    name: 'Adam',
+    role: 'Digital Marketing',
+    image: '/instructors/adam.jpg',
   },
   {
-    name: 'Business Mentor',
-    specialty: 'Growth & Strategy',
-    color: 'from-orange-500 to-amber-400',
-    ring: 'ring-orange-500/40',
+    id: 'daniel',
+    name: 'Daniel',
+    role: 'Financial Literacy',
+    image: '/instructors/daniel.jpg',
   },
   {
-    name: 'Skills Guide',
-    specialty: 'Future-Ready Tech',
-    color: 'from-violet-500 to-purple-400',
-    ring: 'ring-violet-500/40',
+    id: 'steve',
+    name: 'Steve',
+    role: 'Digital Economy',
+    image: '/instructors/steve.jpg',
   },
+  { id: 'luke', name: 'Luke', role: 'AI Youth', image: '/instructors/luke.jpg' },
+  { id: 'carol', name: 'Carol', role: 'Tools', image: '/instructors/carol.jpg' },
 ] as const
 
 export type LearningPath = {
@@ -187,29 +191,6 @@ export const stats = [
   { value: 6, suffix: '', label: 'Learning paths' },
 ] as const
 
-export const roadmap = [
-  {
-    quarter: 'Q1',
-    title: 'Core paths launch',
-    description: 'AI, Creator, and Business Builder paths with AI Mentor.',
-  },
-  {
-    quarter: 'Q2',
-    title: 'Application Lab',
-    description: 'Hands-on project labs and portfolio certifications.',
-  },
-  {
-    quarter: 'Q3',
-    title: 'Community & events',
-    description: 'Global cohorts, live workshops, and peer challenges.',
-  },
-  {
-    quarter: 'Q4',
-    title: 'Enterprise & youth',
-    description: 'Team plans, KHDA-aligned youth programs, and new languages.',
-  },
-] as const
-
 export const faqs = [
   {
     question: 'What makes brAInify different from other courses?',
@@ -243,7 +224,7 @@ export const footerLinks = {
     { label: 'Learning Paths', href: '#paths' },
     { label: 'Application Lab', href: '#ecosystem' },
     { label: 'AI Tools', href: '#tools' },
-    { label: 'Roadmap', href: '#roadmap' },
+    { label: 'Instructors', href: '#instructors' },
     {
       label: 'App Store',
       href: 'https://apps.apple.com/lb/app/brainify-app/id6759913473',

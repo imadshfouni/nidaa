@@ -11,7 +11,6 @@ import { ToolsSection } from '@/components/sections/ToolsSection'
 import { ToolExamples } from '@/components/sections/ToolExamples'
 import { ProofOfSkill } from '@/components/sections/ProofOfSkill'
 import { Stats } from '@/components/sections/Stats'
-import { ProductRoadmap } from '@/components/sections/ProductRoadmap'
 import { FAQ } from '@/components/sections/FAQ'
 import { FinalCTA } from '@/components/sections/FinalCTA'
 
@@ -31,7 +30,6 @@ function App() {
         <ToolExamples />
         <ProofOfSkill />
         <Stats />
-        <ProductRoadmap />
         <FAQ />
         <FinalCTA />
       </main>
