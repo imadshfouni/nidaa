@@ -1,14 +1,12 @@
 import { useEffect } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { ExternalLink, X } from 'lucide-react'
+import { X } from 'lucide-react'
 
 type VideoModalProps = {
   isOpen: boolean
   onClose: () => void
   embedUrl: string
   title: string
-  /** Fallback if embed is blocked by Drive sharing settings */
-  viewUrl?: string
 }
 
 export function VideoModal({
@@ -16,7 +14,6 @@ export function VideoModal({
   onClose,
   embedUrl,
   title,
-  viewUrl,
 }: VideoModalProps) {
   useEffect(() => {
     if (!isOpen) return
@@ -87,21 +84,6 @@ export function VideoModal({
                   allowFullScreen
                 />
               </div>
-
-              {viewUrl ? (
-                <p className="border-t border-white/10 px-4 py-3 text-center text-xs text-slate-500">
-                  Video not loading?{' '}
-                  <a
-                    href={viewUrl}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="inline-flex items-center gap-1 text-cyan-400 hover:text-cyan-300"
-                  >
-                    Open in Google Drive
-                    <ExternalLink size={12} />
-                  </a>
-                </p>
-              ) : null}
             </div>
           </motion.div>
         </div>

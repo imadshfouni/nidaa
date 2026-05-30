@@ -2,11 +2,7 @@ import { useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
 import { ArrowRight, Play } from 'lucide-react'
 import { learningPaths } from '@/data/content'
-import {
-  APP_URL,
-  googleDriveEmbedUrl,
-  googleDriveVideoUrl,
-} from '@/config/site'
+import { APP_URL, googleDriveEmbedUrl } from '@/config/site'
 import { SectionHeading } from '@/components/ui/SectionHeading'
 import { Button } from '@/components/ui/Button'
 import { VideoModal } from '@/components/ui/VideoModal'
@@ -16,7 +12,6 @@ export function LearningPaths() {
   const [videoOpen, setVideoOpen] = useState(false)
   const active = learningPaths.find((p) => p.id === activeId) ?? learningPaths[0]
   const activeEmbedUrl = googleDriveEmbedUrl(active.videoUrl)
-  const activeViewUrl = googleDriveVideoUrl(active.videoUrl)
 
   return (
     <section id="paths" className="section-padding bg-navy-mid/40">
@@ -31,7 +26,6 @@ export function LearningPaths() {
           <div className="space-y-2">
             {learningPaths.map((path) => {
               const isActive = path.id === activeId
-              const hasVideo = Boolean(googleDriveEmbedUrl(path.videoUrl))
               return (
                 <button
                   key={path.id}
@@ -44,16 +38,11 @@ export function LearningPaths() {
                   }`}
                 >
                   <div
-                    className={`relative flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/40 to-cyan-500/30 ${
+                    className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-full bg-gradient-to-br from-blue-600/40 to-cyan-500/30 ${
                       isActive ? 'shadow-lg shadow-cyan-500/20' : ''
                     }`}
                   >
                     <path.icon size={22} className="text-cyan-300" />
-                    {hasVideo && (
-                      <span className="absolute -bottom-0.5 -right-0.5 flex h-4 w-4 items-center justify-center rounded-full bg-cyan-500 text-[#060b18]">
-                        <Play size={8} fill="currentColor" />
-                      </span>
-                    )}
                   </div>
                   <div className="min-w-0">
                     <p className="font-semibold text-white">{path.title}</p>
@@ -127,7 +116,6 @@ export function LearningPaths() {
         isOpen={videoOpen}
         onClose={() => setVideoOpen(false)}
         embedUrl={activeEmbedUrl}
-        viewUrl={activeViewUrl}
         title={`${active.title} — Intro`}
       />
     </section>
