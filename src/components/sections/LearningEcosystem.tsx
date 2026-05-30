@@ -1,4 +1,5 @@
 import { ecosystemFeatures } from '@/data/content'
+import { PhoneMockup } from '@/components/ui/PhoneMockup'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export function LearningEcosystem() {
@@ -6,15 +7,12 @@ export function LearningEcosystem() {
     <section id="ecosystem" className="section-padding overflow-hidden">
       <div className="container-wide">
         <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <ScrollReveal className="order-2 lg:order-1">
-            <div className="relative overflow-hidden rounded-2xl border border-white/10 bg-navy-card p-2">
-              <img
-                src="/examples/app-preview.png"
-                alt="brAInify learning dashboard"
-                className="w-full rounded-xl"
-                loading="lazy"
-              />
-            </div>
+          <ScrollReveal className="order-2 flex justify-center lg:order-1">
+            <PhoneMockup
+              screenshotSrc="/examples/app-preview.png"
+              screenshotAlt="brAInify learning dashboard"
+              maxWidth="max-w-[300px]"
+            />
           </ScrollReveal>
 
           <ScrollReveal className="order-1 lg:order-2" delay={0.1}>

@@ -18,33 +18,13 @@ export const navLinks = [
 
 /** AI mentors inside brAInify — names & roles match the live app */
 export const instructors = [
-  { id: 'ryan', name: 'Ryan', role: 'AI', image: '/instructors/ryan.jpg' },
-  {
-    id: 'sarah',
-    name: 'Sarah',
-    role: 'Content Creator',
-    image: '/instructors/sarah.jpg',
-  },
-  {
-    id: 'adam',
-    name: 'Adam',
-    role: 'Digital Marketing',
-    image: '/instructors/adam.jpg',
-  },
-  {
-    id: 'daniel',
-    name: 'Daniel',
-    role: 'Financial Literacy',
-    image: '/instructors/daniel.jpg',
-  },
-  {
-    id: 'steve',
-    name: 'Steve',
-    role: 'Digital Economy',
-    image: '/instructors/steve.jpg',
-  },
-  { id: 'luke', name: 'Luke', role: 'AI Youth', image: '/instructors/luke.jpg' },
-  { id: 'carol', name: 'Carol', role: 'Tools', image: '/instructors/carol.jpg' },
+  { id: 'ryan', name: 'Ryan', role: 'AI' },
+  { id: 'sarah', name: 'Sarah', role: 'Content Creator' },
+  { id: 'adam', name: 'Adam', role: 'Digital Marketing' },
+  { id: 'daniel', name: 'Daniel', role: 'Financial Literacy' },
+  { id: 'steve', name: 'Steve', role: 'Digital Economy' },
+  { id: 'luke', name: 'Luke', role: 'AI Youth' },
+  { id: 'carol', name: 'Carol', role: 'Tools' },
 ] as const
 
 export type LearningPath = {
