@@ -6,13 +6,9 @@ export function LearningEcosystem() {
   return (
     <section id="ecosystem" className="section-padding overflow-hidden">
       <div className="container-wide">
-        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-20">
-          <ScrollReveal className="order-2 flex justify-center lg:order-1">
-            <PhoneMockup
-              screenshotSrc="/examples/app-preview.png"
-              screenshotAlt="brAInify learning dashboard"
-              maxWidth="max-w-[300px]"
-            />
+        <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.15fr)_minmax(0,0.85fr)] lg:gap-16 xl:gap-20">
+          <ScrollReveal className="order-2 flex w-full justify-center lg:order-1 lg:justify-start">
+            <PhoneMockup size="wide" className="w-full" />
           </ScrollReveal>
 
           <ScrollReveal className="order-1 lg:order-2" delay={0.1}>
