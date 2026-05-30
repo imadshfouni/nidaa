@@ -24,9 +24,9 @@ export function ProofOfSkill() {
             </div>
             <div className="relative flex items-center justify-center bg-gradient-to-br from-blue-600/10 to-cyan-500/5 p-6 sm:p-10">
               <img
-                src="/images/certificate.svg"
+                src="/images/certificate.png"
                 alt="brAInify certificate of completion"
-                className="w-full max-w-md drop-shadow-2xl"
+                className="w-full max-w-lg drop-shadow-2xl"
                 loading="lazy"
               />
             </div>
