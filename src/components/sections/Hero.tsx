@@ -68,23 +68,11 @@ export function Hero() {
         </div>
 
         <motion.div
-          className="relative"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ delay: 0.4, duration: 0.8 }}
         >
           <PhoneMockup maxWidth="max-w-[320px]" />
-          <motion.div
-            className="absolute -bottom-2 -left-2 flex items-center gap-2 rounded-xl border border-[#D97757]/30 bg-[#1a1512]/95 px-3 py-2 shadow-lg backdrop-blur-sm sm:-left-6"
-            animate={{ y: [0, -6, 0] }}
-            transition={{ duration: 4, repeat: Infinity }}
-          >
-            <img src="/logos/claude.svg" alt="Claude" className="h-8 w-8" />
-            <div>
-              <p className="text-xs font-semibold text-white">Powered by Claude</p>
-              <p className="text-[10px] text-[#a8a29e]">Real AI workflows</p>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>
