@@ -57,7 +57,7 @@ export function Navbar() {
             <LogIn size={16} />
             Log in
           </Button>
-          <Button href={APP_URL}>Join for free</Button>
+          <Button href={APP_URL}>Start Learning</Button>
         </div>
 
         <button

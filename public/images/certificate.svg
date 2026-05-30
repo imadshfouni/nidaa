@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 340" fill="none">
+  <rect width="480" height="340" rx="12" fill="#0f172a" stroke="#334155" stroke-width="1"/>
+  <rect x="1" y="1" width="478" height="338" rx="11" fill="url(#bg)" stroke="url(#border)" stroke-width="2"/>
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="480" y2="340">
+      <stop stop-color="#0c1428"/>
+      <stop offset="1" stop-color="#111827"/>
+    </linearGradient>
+    <linearGradient id="border" x1="0" y1="0" x2="480" y2="0">
+      <stop stop-color="#3b82f6" stop-opacity="0.5"/>
+      <stop offset="1" stop-color="#22d3ee" stop-opacity="0.5"/>
+    </linearGradient>
+    <linearGradient id="gold" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#fbbf24"/>
+      <stop offset="1" stop-color="#d97706"/>
+    </linearGradient>
+  </defs>
+  <text x="240" y="48" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="11" font-weight="600" letter-spacing="3">BRAINIFY</text>
+  <text x="240" y="78" text-anchor="middle" fill="#f8fafc" font-family="Georgia,serif" font-size="22" font-weight="700">Certificate of Completion</text>
+  <line x1="80" y1="96" x2="400" y2="96" stroke="#334155" stroke-width="1"/>
+  <text x="240" y="128" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12">This certifies that</text>
+  <text x="240" y="158" text-anchor="middle" fill="#ffffff" font-family="system-ui,sans-serif" font-size="18" font-weight="600">Learner Name</text>
+  <text x="240" y="188" text-anchor="middle" fill="#94a3b8" font-family="system-ui,sans-serif" font-size="12">has successfully completed</text>
+  <text x="240" y="218" text-anchor="middle" fill="#22d3ee" font-family="system-ui,sans-serif" font-size="15" font-weight="600">AI Path  Application Lab</text>
+  <circle cx="400" cy="260" r="36" fill="url(#gold)" opacity="0.95"/>
+  <circle cx="400" cy="260" r="30" fill="#0f172a" stroke="url(#gold)" stroke-width="2"/>
+  <path d="M400 242l4 12h8l-7 5 3 12-8-6-8 6 3-12-7-5h8z" fill="#fbbf24"/>
+  <text x="80" y="300" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">Verified project completion</text>
+  <text x="400" y="300" text-anchor="end" fill="#64748b" font-family="system-ui,sans-serif" font-size="10">brAInify.world</text>
+</svg>

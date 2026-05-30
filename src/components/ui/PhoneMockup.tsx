@@ -1,75 +1,44 @@
 import { motion } from 'framer-motion'
-import { Bot } from 'lucide-react'
+import type { ReactNode } from 'react'
 
 type PhoneMockupProps = {
   /** Full app screenshot shown inside the device frame */
   screenshotSrc?: string
   screenshotAlt?: string
+  /** Built-in React screen (preferred when matching Figma UI) */
+  screen?: ReactNode
   className?: string
-  /** default = hero size; wide = larger footprint for feature sections */
   size?: 'default' | 'wide'
   maxWidth?: string
-}
-
-function ChatScreen() {
-  return (
-    <>
-      <div className="flex items-center justify-between border-b border-white/5 px-5 py-3">
-        <span className="text-xs text-slate-500">9:41</span>
-        <span className="text-xs font-medium text-cyan-400">brAInify</span>
-      </div>
-      <div className="space-y-3 p-4">
-        <div className="rounded-xl bg-blue-500/15 p-3">
-          <p className="text-xs text-slate-400">AI Mentor</p>
-          <p className="mt-1 text-sm text-white">
-            Ready to start your AI Path lesson?
-          </p>
-        </div>
-        <div className="ml-6 rounded-xl bg-white/5 p-3">
-          <p className="text-sm text-slate-300">
-            Yes, let&apos;s build my first agent!
-          </p>
-        </div>
-        <div className="flex items-center gap-2 rounded-xl border border-cyan-500/20 bg-cyan-500/10 p-3">
-          <Bot size={18} className="text-cyan-400" />
-          <p className="text-xs text-cyan-200">Preparing your lesson…</p>
-        </div>
-      </div>
-    </>
-  )
+  animate?: boolean
 }
 
 export function PhoneMockup({
   screenshotSrc,
   screenshotAlt = 'brAInify app',
+  screen,
   className = '',
   size = 'default',
   maxWidth,
+  animate = true,
 }: PhoneMockupProps) {
   const widthClass =
     maxWidth ??
     (size === 'wide' ? 'max-w-[min(100%,520px)]' : 'max-w-[320px]')
-  return (
-    <motion.div
-      className={`relative mx-auto w-full ${widthClass} ${className}`}
-      animate={{ y: [0, -10, 0] }}
-      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
-    >
-      <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-[60px]" />
 
+  const frame = (
+    <div
+      className={`relative border border-white/15 bg-gradient-to-b from-slate-800 to-slate-950 p-2 shadow-2xl shadow-blue-500/20 ${
+        size === 'wide' ? 'rounded-[2.75rem]' : 'rounded-[2.5rem]'
+      }`}
+    >
       <div
-        className={`relative border border-white/15 bg-gradient-to-b from-slate-800 to-slate-950 p-2 shadow-2xl shadow-blue-500/20 ${
-          size === 'wide'
-            ? 'rounded-[2.75rem]'
-            : 'rounded-[2.5rem]'
+        className={`overflow-hidden bg-[#060b18] ${
+          size === 'wide' ? 'rounded-[2.25rem]' : 'rounded-[2rem]'
         }`}
       >
-        <div
-          className={`overflow-hidden bg-[#060b18] ${
-            size === 'wide' ? 'rounded-[2.25rem]' : 'rounded-[2rem]'
-          }`}
-        >
-          {screenshotSrc ? (
+        {screen ??
+          (screenshotSrc ? (
             <img
               src={screenshotSrc}
               alt={screenshotAlt}
@@ -77,11 +46,28 @@ export function PhoneMockup({
               loading="eager"
               decoding="async"
             />
-          ) : (
-            <ChatScreen />
-          )}
-        </div>
+          ) : null)}
       </div>
+    </div>
+  )
+
+  if (!animate) {
+    return (
+      <div className={`relative mx-auto w-full ${widthClass} ${className}`}>
+        <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-[60px]" />
+        {frame}
+      </div>
+    )
+  }
+
+  return (
+    <motion.div
+      className={`relative mx-auto w-full ${widthClass} ${className}`}
+      animate={{ y: [0, -10, 0] }}
+      transition={{ duration: 6, repeat: Infinity, ease: 'easeInOut' }}
+    >
+      <div className="absolute -inset-8 rounded-full bg-blue-500/20 blur-[60px]" />
+      {frame}
     </motion.div>
   )
 }
