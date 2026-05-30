@@ -91,7 +91,7 @@ export function Navbar() {
               Log in
             </Button>
             <Button href={APP_URL} className="w-full">
-              Join for free
+              Start Learning
             </Button>
           </div>
         </div>
