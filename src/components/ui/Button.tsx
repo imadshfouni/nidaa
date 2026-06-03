@@ -1,7 +1,7 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
-type ButtonVariant = 'primary' | 'secondary' | 'ghost' | 'outline' | 'login'
+type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'instagram'
 
 type ButtonProps = {
   variant?: ButtonVariant
@@ -10,17 +10,19 @@ type ButtonProps = {
   className?: string
   onClick?: () => void
   external?: boolean
+  type?: 'button' | 'submit' | 'reset'
 }
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    'bg-gradient-to-r from-blue-600 to-cyan-500 text-white shadow-lg shadow-blue-600/25 hover:shadow-cyan-500/30',
-  secondary: 'border border-white/15 bg-white/5 text-white hover:bg-white/10',
+    'bg-navy text-cream shadow-lg shadow-navy/20 hover:bg-navy-soft border border-navy',
+  secondary:
+    'bg-gold text-navy shadow-lg shadow-gold/25 hover:bg-gold-dark hover:text-cream border border-gold-dark/30',
   outline:
-    'border border-cyan-500/30 bg-transparent text-cyan-300 hover:border-cyan-400/50 hover:bg-cyan-500/10',
-  ghost: 'text-slate-400 hover:text-white hover:bg-white/5',
-  login:
-    'border border-white/20 bg-white/[0.06] text-white hover:border-cyan-400/40 hover:bg-white/10',
+    'border-2 border-navy/20 bg-transparent text-navy hover:border-gold hover:bg-gold/5',
+  ghost: 'text-navy/70 hover:text-navy hover:bg-navy/5',
+  instagram:
+    'bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white shadow-md hover:opacity-95',
 }
 
 export function Button({
@@ -30,6 +32,7 @@ export function Button({
   href,
   onClick,
   external = false,
+  type = 'button',
 }: ButtonProps) {
   const classes = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ${variants[variant]} ${className}`
 
@@ -52,7 +55,7 @@ export function Button({
 
   return (
     <motion.button
-      type="button"
+      type={type}
       className={classes}
       onClick={onClick}
       whileHover={{ scale: 1.02 }}

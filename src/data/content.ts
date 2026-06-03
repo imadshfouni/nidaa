@@ -1,287 +1,211 @@
 import type { LucideIcon } from 'lucide-react'
 import {
+  Award,
+  BarChart3,
+  Brain,
   Briefcase,
-  Cpu,
-  Globe,
-  GraduationCap,
-  Palette,
-  Wallet,
+  Compass,
+  Eye,
+  Flag,
+  HeartHandshake,
+  Lightbulb,
+  LineChart,
+  Rocket,
+  Sparkles,
+  Target,
+  TrendingUp,
+  Users,
+  Zap,
 } from 'lucide-react'
 
 export const navLinks = [
-  { label: 'Paths', href: '#paths' },
-  { label: 'Instructors', href: '#instructors' },
-  { label: 'Ecosystem', href: '#ecosystem' },
-  { label: 'Tools', href: '#tools' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'About', href: '#about' },
+  { label: 'Services', href: '#services' },
+  { label: 'Approach', href: '#approach' },
+  { label: 'Testimonials', href: '#testimonials' },
+  { label: 'Contact', href: '#contact' },
 ] as const
 
-export type Instructor = {
-  id: string
+export const hero = {
+  headline:
+    'Empowering Leaders, Entrepreneurs, and Dreamers to Build Their Next Level',
+  subheadline:
+    'Nidaa is a business coach, entrepreneur, and visionary dedicated to helping individuals unlock clarity, confidence, and strategic growth.',
+  ctaPrimary: 'Work With Nidaa',
+  ctaSecondary: 'Discover Her Story',
+} as const
+
+export const aboutRoles = [
+  'Business Coach',
+  'Entrepreneur',
+  'Visionary',
+  'Mentor',
+] as const
+
+export const aboutParagraphs = [
+  'With a deep belief that leadership begins within, Nidaa partners with ambitious professionals and founders who are ready to move from vision to execution. Her work blends strategic clarity with the mindset shifts required to lead with confidence in competitive markets.',
+  'As an entrepreneur herself, she understands the pressure of building something meaningful — and the discipline it takes to grow with purpose. She helps clients turn ideas into action, strengthen decision-making, and build businesses aligned with their values.',
+  'Whether you are scaling a venture, stepping into leadership, or redefining your next chapter, Nidaa offers a grounded, visionary partnership designed for lasting transformation.',
+] as const
+
+export const missionVision = {
+  mission:
+    'To guide ambitious individuals and entrepreneurs toward clarity, growth, and meaningful success.',
+  vision:
+    'To inspire a new generation of leaders who think bigger, act with confidence, and build impactful businesses.',
+} as const
+
+export type Service = {
+  title: string
+  description: string
+  icon: LucideIcon
+}
+
+export const services: Service[] = [
+  {
+    title: 'Business Coaching',
+    description:
+      'Strategic guidance to refine your model, priorities, and growth plan with clarity and confidence.',
+    icon: Briefcase,
+  },
+  {
+    title: 'Personal Growth & Mindset',
+    description:
+      'Break through limiting beliefs and build the resilience to lead through change and uncertainty.',
+    icon: Brain,
+  },
+  {
+    title: 'Leadership Development',
+    description:
+      'Strengthen your presence, communication, and decision-making as a leader people trust.',
+    icon: Users,
+  },
+  {
+    title: 'Entrepreneurial Strategy',
+    description:
+      'From idea to execution — structure your vision, offers, and roadmap for sustainable growth.',
+    icon: Rocket,
+  },
+  {
+    title: 'Brand & Vision Clarity',
+    description:
+      'Align your personal brand and business narrative with the impact you want to create.',
+    icon: Eye,
+  },
+  {
+    title: 'Goal Setting & Accountability',
+    description:
+      'Turn ambition into measurable milestones with focused support and consistent follow-through.',
+    icon: Target,
+  },
+]
+
+export const benefits = [
+  {
+    title: 'Clear strategic direction',
+    description:
+      'Cut through noise with priorities, plans, and decisions rooted in your long-term vision.',
+    icon: Compass,
+  },
+  {
+    title: 'Personalized coaching approach',
+    description:
+      'Sessions tailored to your goals, industry, and stage — never one-size-fits-all templates.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Entrepreneurial mindset',
+    description:
+      'Think like a builder: resourceful, adaptive, and focused on opportunities that compound.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Practical business guidance',
+    description:
+      'Actionable frameworks you can apply immediately — not theory without implementation.',
+    icon: BarChart3,
+  },
+  {
+    title: 'Confidence & leadership growth',
+    description:
+      'Develop the inner steadiness and outer presence to lead teams and conversations with impact.',
+    icon: Award,
+  },
+  {
+    title: 'Vision-driven transformation',
+    description:
+      'Align daily actions with a bigger purpose so growth feels meaningful, not mechanical.',
+    icon: Sparkles,
+  },
+]
+
+export const approachSteps = [
+  {
+    step: '01',
+    title: 'Clarity',
+    description:
+      'Define what success looks like — values, vision, and the priorities that matter most right now.',
+    icon: Eye,
+  },
+  {
+    step: '02',
+    title: 'Strategy',
+    description:
+      'Design a focused plan with milestones, resources, and decisions that support your next level.',
+    icon: LineChart,
+  },
+  {
+    step: '03',
+    title: 'Action',
+    description:
+      'Move from planning to doing with accountability, momentum, and practical weekly execution.',
+    icon: Zap,
+  },
+  {
+    step: '04',
+    title: 'Growth',
+    description:
+      'Measure progress, refine tactics, and expand capacity as results and confidence compound.',
+    icon: TrendingUp,
+  },
+  {
+    step: '05',
+    title: 'Transformation',
+    description:
+      'Integrate new habits, leadership identity, and business outcomes that last beyond the program.',
+    icon: Flag,
+  },
+]
+
+export type Testimonial = {
+  quote: string
   name: string
   role: string
-  image?: string
 }
 
-/** AI mentors inside brAInify — names & roles match the live app */
-export const instructors: Instructor[] = [
+export const testimonials: Testimonial[] = [
   {
-    id: 'ryan',
-    name: 'Ryan',
-    role: 'AI',
-    image: '/instructors/ryan.png',
+    quote:
+      'Nidaa helped me see my business with fresh eyes. Within weeks I had a clearer offer, stronger messaging, and the confidence to pitch to partners I had been avoiding for months.',
+    name: 'Sarah M.',
+    role: 'Founder, Wellness Studio',
   },
   {
-    id: 'sarah',
-    name: 'Sarah',
-    role: 'Content Creator',
-    image: '/instructors/sarah.png',
+    quote:
+      'Her coaching is direct and compassionate. I stopped overthinking every decision and started leading my team with a calm, strategic mindset that my staff immediately noticed.',
+    name: 'James K.',
+    role: 'Operations Director',
   },
   {
-    id: 'adam',
-    name: 'Adam',
-    role: 'Digital Marketing',
-    image: '/instructors/adam.png',
-  },
-  {
-    id: 'daniel',
-    name: 'Daniel',
-    role: 'Financial Literacy',
-    image: '/instructors/daniel.png',
-  },
-  {
-    id: 'steve',
-    name: 'Steve',
-    role: 'Digital Economy',
-    image: '/instructors/steve.png',
-  },
-  {
-    id: 'luke',
-    name: 'Luke',
-    role: 'AI Youth',
-    image: '/instructors/luke.png',
-  },
-  {
-    id: 'carol',
-    name: 'Carol',
-    role: 'Tools',
-    image: '/instructors/carol.png',
+    quote:
+      'Working with Nidaa was the turning point in my entrepreneurial journey. She blends mindset work with real business strategy — exactly what I needed to scale with purpose.',
+    name: 'Layla H.',
+    role: 'E-commerce Entrepreneur',
   },
 ]
 
-export type LearningPath = {
-  id: string
-  icon: LucideIcon
-  title: string
-  tag: string
-  tagColor: string
-  description: string
-  highlights: string[]
-  /** Google Drive share link — Explore Path opens this video */
-  videoUrl: string
-}
-
-/**
- * Path intro videos (Google Drive).
- * In Drive: open video → Share → General access → Anyone with the link → Copy link.
- * Paste the full URL into `videoUrl` for each path.
- */
-export const learningPaths: LearningPath[] = [
-  {
-    id: 'ai',
-    icon: Cpu,
-    title: 'The AI Path',
-    tag: 'BUILDERS & INNOVATORS',
-    tagColor: 'text-cyan-400',
-    description:
-      'Learn how to use AI tools, write powerful prompts, automate tasks, solve problems faster, and build real AI-powered workflows.',
-    highlights: ['AI tools', 'Prompt writing', 'Automation & workflows'],
-    videoUrl:
-      'https://drive.google.com/file/d/1oeKBMYZR9n-spe3ipf4vZPCgZxJMMdqa/view?usp=share_link',
-  },
-  {
-    id: 'creator',
-    icon: Palette,
-    title: 'The Creator Path',
-    tag: 'CREATORS & BRANDS',
-    tagColor: 'text-fuchsia-400',
-    description:
-      'Learn how to create content using AI, including videos, scripts, visuals, social media posts, content plans, and creative campaigns.',
-    highlights: ['Video & scripts', 'Visuals & social', 'Content plans'],
-    videoUrl:
-      'https://drive.google.com/file/d/1BVJvWQt1ueTR0BRnBnHRi2wYzpkLxRSr/view?usp=share_link',
-  },
-  {
-    id: 'marketing',
-    icon: Briefcase,
-    title: 'The Digital Marketing Path',
-    tag: 'MARKETERS & GROWTH',
-    tagColor: 'text-blue-400',
-    description:
-      'Learn how to promote brands and products online using social media, ads, content strategy, funnels, analytics, and AI-powered marketing tools.',
-    highlights: ['Social & ads', 'Funnels & strategy', 'Analytics & AI tools'],
-    videoUrl:
-      'https://drive.google.com/file/d/1OYnGR73_CAQ_4PWTHiml3u6kaoA_8j07/view?usp=share_link',
-  },
-  {
-    id: 'economy',
-    icon: Globe,
-    title: 'The Digital Economy Path',
-    tag: 'DIGITAL BUSINESS',
-    tagColor: 'text-emerald-400',
-    description:
-      'Learn how the modern online economy works, including digital business models, online platforms, remote work, e-commerce, and AI-driven opportunities.',
-    highlights: ['Business models', 'E-commerce', 'Remote & AI opportunities'],
-    videoUrl:
-      'https://drive.google.com/file/d/1sVVLkKrU6NA1t40agdcbe5Ocf09Z5Lru/view?usp=share_link',
-  },
-  {
-    id: 'financial',
-    icon: Wallet,
-    title: 'The Financial Literacy Path',
-    tag: 'MONEY & PLANNING',
-    tagColor: 'text-amber-400',
-    description:
-      'Learn the basics of money management, budgeting, saving, investing concepts, financial planning, and making smarter financial decisions.',
-    highlights: ['Budgeting & saving', 'Investing basics', 'Financial planning'],
-    videoUrl:
-      'https://drive.google.com/file/d/17prvrooOcE4m4DHXMmkYiDC_cUxe3K4Y/view?usp=share_link',
-  },
-  {
-    id: 'youth',
-    icon: GraduationCap,
-    title: 'The Youth Path',
-    tag: 'NEXT GENERATION',
-    tagColor: 'text-violet-400',
-    description:
-      'A beginner-friendly path designed for young learners to understand AI, digital skills, creativity, problem-solving, and future-ready learning in a simple way.',
-    highlights: ['AI basics', 'Digital skills', 'Creativity & problem-solving'],
-    videoUrl:
-      'https://drive.google.com/file/d/1ikgz5QUGhvApuTKEzc4UCvSUrBlEyHx_/view?usp=share_link',
-  },
-]
-
-export const ecosystemFeatures = [
-  {
-    title: 'Track your progress',
-    description: 'Units, chapters, and a clear 0–100% path.',
-  },
-  {
-    title: 'Lessons + simulations',
-    description: 'Learn the idea, then practice in live scenarios.',
-  },
-  {
-    title: 'XP & streaks',
-    description: 'Daily wins that compound into real skill growth.',
-  },
-] as const
-
-export const languages = [
-  'English',
-  'Arabic',
-  'Hindi',
-  'French',
-  'Russian',
-  'Spanish',
-  'German',
-  'Portuguese',
-] as const
-
-export const tools = [
-  {
-    name: 'Claude',
-    category: 'REASONING & WRITING',
-    color: 'text-[#f0a88c]',
-    logo: '/logos/claude.svg',
-    logoClass: 'h-9 w-9',
-  },
-  {
-    name: 'Descript',
-    category: 'AUDIO & VIDEO',
-    color: 'text-violet-400',
-    logo: '/logos/descript.svg',
-    logoClass: 'h-9 w-9 rounded-lg',
-  },
-  {
-    name: 'Perplexity',
-    category: 'RESEARCH',
-    color: 'text-cyan-400',
-    logo: '/logos/perplexity.svg',
-    logoClass: 'h-9 w-9',
-  },
-  {
-    name: 'Relevance AI',
-    category: 'AGENTS & OPS',
-    color: 'text-indigo-400',
-    logo: '/logos/relevance.svg',
-    logoClass: 'h-9 w-9 rounded-lg',
-  },
-  {
-    name: 'n8n',
-    category: 'WORKFLOW AUTOMATION',
-    color: 'text-rose-400',
-    logo: '/logos/n8n.svg',
-    logoClass: 'h-9 w-9',
-  },
-] as const
-
-export const stats = [
-  { value: 17000, suffix: '+', label: 'Active learners' },
-  { value: 4.9, suffix: '', label: 'Average rating', decimals: 1 },
-  { value: 120, suffix: '+', label: 'Countries' },
-  { value: 6, suffix: '', label: 'Learning paths' },
-] as const
-
-export const faqs = [
-  {
-    question: 'What makes brAInify different from other courses?',
-    answer:
-      'brAInify is an AI-powered ecosystem — not passive video courses. You learn with a personal AI Mentor, build real projects in the Application Lab, and earn proof of skill.',
-  },
-  {
-    question: 'Do I need prior experience with AI?',
-    answer:
-      'No. Paths adapt to your level. The AI Mentor personalizes every journey whether you are a complete beginner or advancing your career.',
-  },
-  {
-    question: 'Is brAInify available on mobile?',
-    answer:
-      'Yes. brAInify is available on iOS and Android, plus web — learn on any device, anywhere.',
-  },
-  {
-    question: 'What languages are supported?',
-    answer:
-      'brAInify supports multiple languages including English, Arabic, Hindi, French, Russian, and more — with new languages added regularly.',
-  },
-  {
-    question: 'How does the AI Mentor work?',
-    answer:
-      'Your AI Mentor guides you through your chosen path, explains concepts in plain language, recommends next steps, and helps you apply skills to real projects 24/7.',
-  },
-] as const
-
-export const footerLinks = {
-  product: [
-    { label: 'Learning Paths', href: '#paths' },
-    { label: 'Application Lab', href: '#ecosystem' },
-    { label: 'AI Tools', href: '#tools' },
-    { label: 'Instructors', href: '#instructors' },
-    {
-      label: 'App Store',
-      href: 'https://apps.apple.com/lb/app/brainify-app/id6759913473',
-    },
-    {
-      label: 'Google Play',
-      href: 'https://play.google.com/store/apps/details?id=com.brainify.app',
-    },
-  ],
-  company: [
-    { label: 'Log in', href: 'https://app.brainify.world' },
-    { label: 'Ignite', href: 'https://joinignite.com/brainify/' },
-    { label: 'Contact', href: 'mailto:support@brainify.world' },
-  ],
-  legal: [
-    { label: 'Privacy', href: '#' },
-    { label: 'Terms', href: '#' },
-  ],
+export const ctaSection = {
+  headline: 'Ready to Build Your Next Level?',
+  text: 'Start your journey with Nidaa and take the next step toward clarity, confidence, and growth.',
+  button: 'Book a Session',
 } as const

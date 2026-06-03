@@ -1,39 +1,33 @@
-import { BackgroundMesh } from '@/components/ui/BackgroundMesh'
+import { LuxuryBackground } from '@/components/ui/LuxuryBackground'
 import { Navbar } from '@/components/layout/Navbar'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
-import { ValueProposition } from '@/components/sections/ValueProposition'
-import { SpecialtyExperts } from '@/components/sections/SpecialtyExperts'
-import { LearningPaths } from '@/components/sections/LearningPaths'
-import { LearningEcosystem } from '@/components/sections/LearningEcosystem'
-import { Languages } from '@/components/sections/Languages'
-import { ToolsSection } from '@/components/sections/ToolsSection'
-import { MobileLoginBar } from '@/components/layout/MobileLoginBar'
-import { ProofOfSkill } from '@/components/sections/ProofOfSkill'
-import { Stats } from '@/components/sections/Stats'
-import { FAQ } from '@/components/sections/FAQ'
+import { About } from '@/components/sections/About'
+import { MissionVision } from '@/components/sections/MissionVision'
+import { CoachingServices } from '@/components/sections/CoachingServices'
+import { WhyWorkWith } from '@/components/sections/WhyWorkWith'
+import { SignatureApproach } from '@/components/sections/SignatureApproach'
+import { Testimonials } from '@/components/sections/Testimonials'
 import { FinalCTA } from '@/components/sections/FinalCTA'
+import { Contact } from '@/components/sections/Contact'
 
 function App() {
   return (
     <>
-      <BackgroundMesh />
+      <LuxuryBackground />
       <Navbar />
-      <main className="pb-20 lg:pb-0">
+      <main>
         <Hero />
-        <ValueProposition />
-        <SpecialtyExperts />
-        <LearningPaths />
-        <LearningEcosystem />
-        <Languages />
-        <ToolsSection />
-        <ProofOfSkill />
-        <Stats />
-        <FAQ />
+        <About />
+        <MissionVision />
+        <CoachingServices />
+        <WhyWorkWith />
+        <SignatureApproach />
+        <Testimonials />
         <FinalCTA />
+        <Contact />
       </main>
       <Footer />
-      <MobileLoginBar />
     </>
   )
 }

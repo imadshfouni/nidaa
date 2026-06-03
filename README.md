@@ -1,6 +1,6 @@
-# brAInify Landing Page
+# Nidaa — Personal Brand Website
 
-Production-ready marketing landing page for **brAInify** — an AI-powered learning ecosystem.
+Premium personal brand site for **Nidaa** — business coach, entrepreneur, and visionary leader.
 
 ## Stack
 
@@ -8,7 +8,7 @@ Production-ready marketing landing page for **brAInify** — an AI-powered learn
 - Vite
 - Tailwind CSS v4
 - Framer Motion
-- Lucide React
+- Lucide React (UI icons; brand social icons are custom SVGs)
 
 ## Getting started
 
@@ -19,28 +19,17 @@ npm run dev
 
 Open [http://localhost:5173](http://localhost:5173).
 
+## Customize
+
+| What | Where |
+|------|--------|
+| Copy, services, testimonials | `src/data/content.ts` |
+| Instagram, email, WhatsApp, portrait path | `src/config/site.ts` |
+| Portrait image | `public/assets/nidaa-portrait.jpg` |
+
 ## Build
 
 ```bash
 npm run build
 npm run preview
 ```
-
-## Project structure
-
-```
-src/
-├── components/
-│   ├── layout/       # Navbar, Footer
-│   ├── sections/     # Page sections
-│   └── ui/           # Reusable UI primitives
-├── data/
-│   └── content.ts    # Copy, paths, testimonials, stats
-└── App.tsx
-```
-
-Edit marketing copy and data arrays in `src/data/content.ts`.
-
-## Figma alignment
-
-Visual tokens (colors, spacing, typography) should be tuned against the Figma file once exports are available. Share PNG/SVG frames from node `5253-2` for pixel-perfect refinement.

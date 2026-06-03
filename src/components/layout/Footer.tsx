@@ -1,109 +1,94 @@
-import { LogIn } from 'lucide-react'
-import { footerLinks } from '@/data/content'
-import { APP_URL } from '@/config/site'
-import { Logo } from '@/components/ui/Logo'
-import { AppStoreBadges } from '@/components/ui/AppStoreBadges'
-import { Button } from '@/components/ui/Button'
+import { InstagramIcon, LinkedInIcon, TwitterIcon } from '@/components/ui/SocialIcons'
+import { navLinks } from '@/data/content'
+import {
+  BRAND_NAME,
+  EMAIL,
+  INSTAGRAM_URL,
+  SOCIAL_LINKS,
+  TAGLINE,
+} from '@/config/site'
+import { InstagramLink } from '@/components/ui/InstagramLink'
+
+const socialIcons = [
+  { href: SOCIAL_LINKS.instagram, Icon: InstagramIcon, label: 'Instagram' },
+  { href: SOCIAL_LINKS.linkedin, Icon: LinkedInIcon, label: 'LinkedIn' },
+  { href: SOCIAL_LINKS.twitter, Icon: TwitterIcon, label: 'Twitter' },
+] as const
 
 export function Footer() {
+  const year = new Date().getFullYear()
+
   return (
-    <footer className="border-t border-white/[0.06] bg-surface-elevated/50">
-      <div className="container-wide section-padding !py-16">
-        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-5">
-          <div className="lg:col-span-2">
-            <a href="#" className="inline-flex">
-              <Logo size="md" />
-            </a>
-            <div className="mt-6">
-              <AppStoreBadges />
+    <footer className="border-t border-navy/10 bg-navy text-cream">
+      <div className="container-wide section-padding !py-14">
+        <div className="grid gap-12 md:grid-cols-3">
+          <div>
+            <p className="font-display text-2xl font-semibold">{BRAND_NAME}</p>
+            <p className="mt-3 max-w-xs text-sm leading-relaxed text-cream/65">{TAGLINE}</p>
+            <p className="mt-4 text-sm text-cream/50">
+              Empowering leaders to build clarity, confidence, and growth.
+            </p>
+          </div>
+
+          <div>
+            <p className="eyebrow mb-4 text-gold-light">Navigate</p>
+            <ul className="space-y-3">
+              {navLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-sm text-cream/75 transition hover:text-gold-light"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          <div>
+            <p className="eyebrow mb-4 text-gold-light">Connect</p>
+            <ul className="space-y-3 text-sm text-cream/75">
+              <li>
+                <a href={`mailto:${EMAIL}`} className="transition hover:text-gold-light">
+                  {EMAIL}
+                </a>
+              </li>
+              <li>
+                <InstagramLink
+                  showLabel
+                  label="Follow on Instagram"
+                  className="text-cream/75 hover:text-gold-light"
+                />
+              </li>
+            </ul>
+            <div className="mt-6 flex gap-3">
+              {socialIcons.map(({ href, Icon, label }) => (
+                <a
+                  key={label}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-cream/15 p-2.5 text-cream/80 transition hover:border-gold/40 hover:text-gold-light"
+                  aria-label={label}
+                >
+                  <Icon size={18} className="text-current" />
+                </a>
+              ))}
             </div>
-            <p className="mt-6 max-w-sm text-sm leading-relaxed text-slate-500">
-              An AI-powered learning ecosystem where learning turns into
-              real-world building. Part of the Ignite ecosystem.
-            </p>
-            <p className="mt-4 text-sm text-slate-600">
-              <a
-                href="mailto:support@brainify.world"
-                className="text-slate-400 transition-colors hover:text-brand-400"
-              >
-                support@brainify.world
-              </a>
-            </p>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
-              Product
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.product.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-500 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
-              Company
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.company.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-500 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          <div>
-            <h4 className="mb-4 text-sm font-semibold uppercase tracking-wider text-slate-400">
-              Legal
-            </h4>
-            <ul className="space-y-3">
-              {footerLinks.legal.map((link) => (
-                <li key={link.label}>
-                  <a
-                    href={link.href}
-                    className="text-sm text-slate-500 transition-colors hover:text-white"
-                  >
-                    {link.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <a
+              href={INSTAGRAM_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-6 inline-block text-xs font-semibold uppercase tracking-wider text-gold-light transition hover:text-gold"
+            >
+              Follow Nidaa on Instagram →
+            </a>
           </div>
         </div>
 
-        <div className="mt-12 border-t border-white/[0.06] pt-8">
-          <div className="flex flex-col items-center gap-6 sm:flex-row sm:justify-between">
-            <p className="text-sm text-slate-600">
-              © {new Date().getFullYear()} brAInify. All rights reserved.
-            </p>
-            <Button variant="login" href={APP_URL} className="min-w-[200px]">
-              <LogIn size={16} />
-              Log in
-            </Button>
-            <a
-              href="https://www.brAInify.world"
-              className="text-sm text-slate-600 transition-colors hover:text-cyan-400"
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              www.brAInify.world
-            </a>
-          </div>
+        <div className="mt-12 border-t border-cream/10 pt-8 text-center text-sm text-cream/45">
+          © {year} {BRAND_NAME}. All rights reserved.
         </div>
       </div>
     </footer>

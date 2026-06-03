@@ -6,6 +6,7 @@ type SectionHeadingProps = {
   description?: string
   align?: 'center' | 'left'
   className?: string
+  light?: boolean
 }
 
 export function SectionHeading({
@@ -14,8 +15,11 @@ export function SectionHeading({
   description,
   align = 'center',
   className = '',
+  light = false,
 }: SectionHeadingProps) {
   const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left'
+  const titleClass = light ? 'text-cream' : 'text-navy'
+  const descClass = light ? 'text-cream/75' : 'text-charcoal/65'
 
   return (
     <motion.div
@@ -25,16 +29,14 @@ export function SectionHeading({
       viewport={{ once: true, margin: '-80px' }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
     >
-      {eyebrow && (
-        <span className="mb-4 inline-block rounded-full border border-brand-500/30 bg-brand-500/10 px-4 py-1.5 text-xs font-semibold uppercase tracking-widest text-brand-300">
-          {eyebrow}
-        </span>
-      )}
-      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-[2.75rem] lg:leading-tight">
+      {eyebrow && <p className={`eyebrow mb-4 ${light ? 'text-gold-light' : ''}`}>{eyebrow}</p>}
+      <h2
+        className={`font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-tight ${titleClass}`}
+      >
         {title}
       </h2>
       {description && (
-        <p className="mt-4 text-base leading-relaxed text-slate-400 sm:text-lg">
+        <p className={`mt-4 text-base leading-relaxed sm:text-lg ${descClass}`}>
           {description}
         </p>
       )}

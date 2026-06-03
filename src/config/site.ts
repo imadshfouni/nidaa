@@ -1,34 +1,22 @@
-/** Production web app — login & primary CTAs */
-export const APP_URL = 'https://app.brainify.world'
+/** Site-wide links and assets — edit here to update URLs and images */
 
-export const APP_STORE_URL =
-  'https://apps.apple.com/lb/app/brainify-app/id6759913473'
+export const BRAND_NAME = 'Nidaa'
 
-export const PLAY_STORE_URL =
-  'https://play.google.com/store/apps/details?id=com.brainify.app'
+export const TAGLINE = 'Business Coach · Entrepreneur · Visionary Leader'
 
-/** Official app icon (App Store / Play Store) */
-export const LOGO_SRC = '/brainify-logo.png'
+/** Replace with Nidaa’s portrait (same path in /public/assets/) */
+export const PORTRAIT_SRC = '/assets/nidaa-portrait.jpg'
 
-/** Extract file id from a Google Drive share or view URL. */
-export function googleDriveFileId(shareOrViewUrl: string): string | null {
-  const trimmed = shareOrViewUrl.trim()
-  if (!trimmed) return null
+export const INSTAGRAM_URL = 'https://www.instagram.com/USERNAME'
 
-  const idMatch = trimmed.match(/\/d\/([a-zA-Z0-9_-]+)/)
-  return idMatch?.[1] ?? null
-}
+export const EMAIL = 'hello@nidaa.co'
 
-/** Open the file on Google Drive in a new tab (fallback). */
-export function googleDriveVideoUrl(shareOrViewUrl: string): string {
-  const id = googleDriveFileId(shareOrViewUrl)
-  if (id) return `https://drive.google.com/file/d/${id}/view`
-  return shareOrViewUrl.trim()
-}
+export const WHATSAPP_URL = 'https://wa.me/0000000000'
 
-/** Embed URL for in-page playback (iframe). File must be shared: anyone with the link. */
-export function googleDriveEmbedUrl(shareOrViewUrl: string): string {
-  const id = googleDriveFileId(shareOrViewUrl)
-  if (!id) return ''
-  return `https://drive.google.com/file/d/${id}/preview`
-}
+export const BOOK_SESSION_URL = '#contact'
+
+export const SOCIAL_LINKS = {
+  instagram: INSTAGRAM_URL,
+  linkedin: 'https://www.linkedin.com/in/USERNAME',
+  twitter: 'https://twitter.com/USERNAME',
+} as const
