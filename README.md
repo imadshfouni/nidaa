@@ -1,35 +1,29 @@
-# Nidaa — Personal Brand Website
+# Nidaa Ryweck — Personal Brand Website
 
-Premium personal brand site for **Nidaa** — business coach, entrepreneur, and visionary leader.
+Premium personal brand site for **Nidaa Ryweck** — Business Coach, Entrepreneur, and Visionary Leader.
 
 ## Stack
 
-- React 19 + TypeScript
-- Vite
-- Tailwind CSS v4
-- Framer Motion
-- Lucide React (UI icons; brand social icons are custom SVGs)
+React 19 · Vite · Tailwind CSS v4 · Framer Motion · Lucide React
 
-## Getting started
+## Develop
 
 ```bash
 npm install
 npm run dev
 ```
 
-Open [http://localhost:5173](http://localhost:5173).
+## Render deploy
+
+| Setting | Value |
+|---------|--------|
+| Build Command | `npm install && npm run build` |
+| Publish Directory | `dist` |
 
 ## Customize
 
-| What | Where |
-|------|--------|
+| Item | Location |
+|------|----------|
 | Copy, services, testimonials | `src/data/content.ts` |
-| Instagram, email, WhatsApp, portrait path | `src/config/site.ts` |
-| Portrait image | `public/assets/nidaa-portrait.jpg` |
-
-## Build
-
-```bash
-npm run build
-npm run preview
-```
+| Instagram, email, WhatsApp | `src/config/site.ts` |
+| Portrait | `src/assets/nidaa-profile.png` |

@@ -1,10 +1,10 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
 
-type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'instagram'
+type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'instagram'
 
 type ButtonProps = {
-  variant?: ButtonVariant
+  variant?: Variant
   children: ReactNode
   href?: string
   className?: string
@@ -13,28 +13,30 @@ type ButtonProps = {
   type?: 'button' | 'submit' | 'reset'
 }
 
-const variants: Record<ButtonVariant, string> = {
+const styles: Record<Variant, string> = {
   primary:
-    'bg-navy text-cream shadow-lg shadow-navy/20 hover:bg-navy-soft border border-navy',
+    'bg-navy text-ivory border border-navy shadow-[0_12px_32px_-8px_rgba(12,18,34,0.45)] hover:bg-navy-mid',
   secondary:
-    'bg-gold text-navy shadow-lg shadow-gold/25 hover:bg-gold-dark hover:text-cream border border-gold-dark/30',
+    'bg-gold text-navy border border-gold-dark/20 shadow-[0_12px_32px_-8px_rgba(196,165,116,0.5)] hover:bg-gold-dark hover:text-ivory',
   outline:
-    'border-2 border-navy/20 bg-transparent text-navy hover:border-gold hover:bg-gold/5',
-  ghost: 'text-navy/70 hover:text-navy hover:bg-navy/5',
+    'bg-transparent text-navy border-2 border-navy/15 hover:border-gold hover:bg-gold/5',
+  ghost: 'text-muted hover:text-navy hover:bg-navy/5',
   instagram:
-    'bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white shadow-md hover:opacity-95',
+    'bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white border-0 shadow-md hover:brightness-105',
 }
 
 export function Button({
   variant = 'primary',
   children,
-  className = '',
   href,
+  className = '',
   onClick,
   external = false,
   type = 'button',
 }: ButtonProps) {
-  const classes = `inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-sm font-semibold transition-all duration-300 ${variants[variant]} ${className}`
+  const base =
+    'inline-flex items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300'
+  const classes = `${base} ${styles[variant]} ${className}`
 
   const isExternal =
     external || (href?.startsWith('http') && !href.startsWith('#'))
@@ -44,7 +46,7 @@ export function Button({
       <motion.a
         href={href}
         className={classes}
-        whileHover={{ scale: 1.02 }}
+        whileHover={{ y: -2 }}
         whileTap={{ scale: 0.98 }}
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
@@ -54,13 +56,7 @@ export function Button({
   }
 
   return (
-    <motion.button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      whileHover={{ scale: 1.02 }}
-      whileTap={{ scale: 0.98 }}
-    >
+    <motion.button type={type} className={classes} onClick={onClick} whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
       {children}
     </motion.button>
   )

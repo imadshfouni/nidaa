@@ -1,147 +1,124 @@
-import { motion } from 'framer-motion'
 import { Mail, MessageCircle } from 'lucide-react'
 import { useState, type FormEvent } from 'react'
-import { InstagramIcon } from '@/components/ui/SocialIcons'
-import {
-  BOOK_SESSION_URL,
-  EMAIL,
-  INSTAGRAM_URL,
-  WHATSAPP_URL,
-} from '@/config/site'
+import { BOOK_SESSION_URL, BRAND_NAME, EMAIL, INSTAGRAM_URL, WHATSAPP_URL } from '@/config/site'
 import { Button } from '@/components/ui/Button'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { SectionHeading } from '@/components/ui/SectionHeading'
-import { InstagramLink } from '@/components/ui/InstagramLink'
+import { InstagramIcon } from '@/components/ui/SocialIcons'
 
 export function Contact() {
-  const [submitted, setSubmitted] = useState(false)
+  const [sent, setSent] = useState(false)
 
-  function handleSubmit(e: FormEvent<HTMLFormElement>) {
+  function onSubmit(e: FormEvent<HTMLFormElement>) {
     e.preventDefault()
-    setSubmitted(true)
+    setSent(true)
   }
 
   return (
-    <section id="contact" className="section-padding bg-cream-dark">
-      <div className="container-wide">
+    <section id="contact" className="section-padding bg-cream">
+      <div className="container-luxury px-5 lg:px-14">
         <SectionHeading
-          eyebrow="Connect"
-          title="Get in Touch"
-          description="Share your goals and Nidaa will respond with next steps for coaching or a discovery conversation."
+          eyebrow="Contact"
+          title={`Work With ${BRAND_NAME}`}
+          description="Share your goals and take the first step toward clarity, confidence, and strategic growth."
         />
 
         <div className="grid gap-12 lg:grid-cols-5">
           <ScrollReveal className="lg:col-span-3">
-            <form
-              onSubmit={handleSubmit}
-              className="glass-light space-y-5 p-8 sm:p-10"
-            >
+            <form onSubmit={onSubmit} className="glass-card space-y-5 p-8 sm:p-10">
               <div className="grid gap-5 sm:grid-cols-2">
                 <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-navy">Name</span>
+                  <span className="mb-2 block text-sm font-semibold text-navy">Name</span>
                   <input
                     required
                     name="name"
-                    type="text"
-                    className="w-full rounded-xl border border-navy/10 bg-white/80 px-4 py-3 text-navy outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                    className="w-full rounded-xl border border-navy/10 bg-ivory px-4 py-3.5 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
                     placeholder="Your name"
                   />
                 </label>
                 <label className="block">
-                  <span className="mb-2 block text-sm font-medium text-navy">Email</span>
+                  <span className="mb-2 block text-sm font-semibold text-navy">Email</span>
                   <input
                     required
-                    name="email"
                     type="email"
-                    className="w-full rounded-xl border border-navy/10 bg-white/80 px-4 py-3 text-navy outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                    name="email"
+                    className="w-full rounded-xl border border-navy/10 bg-ivory px-4 py-3.5 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
                     placeholder="you@email.com"
                   />
                 </label>
               </div>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-navy">Phone</span>
+                <span className="mb-2 block text-sm font-semibold text-navy">Phone</span>
                 <input
                   name="phone"
                   type="tel"
-                  className="w-full rounded-xl border border-navy/10 bg-white/80 px-4 py-3 text-navy outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                  className="w-full rounded-xl border border-navy/10 bg-ivory px-4 py-3.5 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
                   placeholder="+1 (000) 000-0000"
                 />
               </label>
               <label className="block">
-                <span className="mb-2 block text-sm font-medium text-navy">Message</span>
+                <span className="mb-2 block text-sm font-semibold text-navy">Message</span>
                 <textarea
                   required
                   name="message"
                   rows={5}
-                  className="w-full resize-y rounded-xl border border-navy/10 bg-white/80 px-4 py-3 text-navy outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
-                  placeholder="Tell Nidaa about your goals..."
+                  className="w-full resize-y rounded-xl border border-navy/10 bg-ivory px-4 py-3.5 outline-none transition focus:border-gold focus:ring-2 focus:ring-gold/20"
+                  placeholder="Tell Nidaa Ryweck about your goals..."
                 />
               </label>
-              {submitted ? (
+              {sent ? (
                 <p className="rounded-xl bg-gold/15 px-4 py-3 text-sm font-medium text-gold-dark">
-                  Thank you — your message is ready to send. Connect this form to your email
-                  service or backend when you go live.
+                  Thank you. Connect this form to your email provider when you go live.
                 </p>
               ) : (
-                <Button type="submit" variant="primary" className="w-full sm:w-auto">
+                <Button type="submit" variant="primary">
                   Send Message
                 </Button>
               )}
             </form>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.15} className="lg:col-span-2">
-            <div className="space-y-6">
-              <div className="glass-light p-8">
-                <h3 className="font-display text-xl font-semibold text-navy">Direct Contact</h3>
-                <ul className="mt-6 space-y-4">
-                  <li>
-                    <a
-                      href={`mailto:${EMAIL}`}
-                      className="inline-flex items-center gap-3 text-charcoal/80 transition hover:text-gold-dark"
-                    >
-                      <Mail size={20} className="text-gold-dark" />
-                      {EMAIL}
-                    </a>
-                  </li>
-                  <li>
-                    <InstagramLink
-                      showLabel
-                      label="@USERNAME on Instagram"
-                      className="text-charcoal/80 hover:text-gold-dark"
-                    />
-                  </li>
-                </ul>
-              </div>
+          <ScrollReveal delay={0.12} className="lg:col-span-2">
+            <div className="glass-card h-full p-8 sm:p-10">
+              <h3 className="font-display text-2xl font-semibold text-navy">Direct Contact</h3>
+              <p className="mt-2 text-sm text-muted">Nidaa Ryweck — Business Coach & Entrepreneur</p>
 
-              <div className="flex flex-col gap-3">
+              <ul className="mt-8 space-y-5">
+                <li>
+                  <a
+                    href={`mailto:${EMAIL}`}
+                    className="flex items-center gap-3 text-muted transition hover:text-navy"
+                  >
+                    <Mail size={20} className="text-gold-dark" />
+                    {EMAIL}
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href={INSTAGRAM_URL}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-3 text-muted transition hover:text-navy"
+                  >
+                    <InstagramIcon size={20} className="text-gold-dark" />
+                    @ryweckn on Instagram
+                  </a>
+                </li>
+              </ul>
+
+              <div className="mt-10 flex flex-col gap-3">
                 <Button variant="secondary" href={BOOK_SESSION_URL}>
                   Book a Session
                 </Button>
-                <Button
-                  variant="outline"
-                  href={WHATSAPP_URL}
-                  external
-                  className="w-full"
-                >
+                <Button variant="outline" href={WHATSAPP_URL} external className="w-full">
                   <MessageCircle size={18} />
                   WhatsApp
                 </Button>
                 <Button variant="instagram" href={INSTAGRAM_URL} external className="w-full">
                   <InstagramIcon size={18} />
-                  Follow Nidaa on Instagram
+                  Follow on Instagram
                 </Button>
               </div>
-
-              <motion.p
-                className="text-sm text-charcoal/55"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
-              >
-                Update email, WhatsApp, and Instagram URLs in{' '}
-                <code className="rounded bg-white/80 px-1 text-xs">src/config/site.ts</code>
-              </motion.p>
             </div>
           </ScrollReveal>
         </div>

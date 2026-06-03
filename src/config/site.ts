@@ -1,15 +1,15 @@
-/** Site-wide links and assets — edit here to update URLs and images */
+/** Site config — edit URLs and contact details here */
 
-export const BRAND_NAME = 'Nidaa'
+export const BRAND_NAME = 'Nidaa Ryweck'
 
-export const TAGLINE = 'Business Coach · Entrepreneur · Visionary Leader'
+export const BRAND_TITLE = 'Business Coach | Entrepreneur | Visionary Leader'
 
-/** Replace with Nidaa’s portrait (same path in /public/assets/) */
-export const PORTRAIT_SRC = '/assets/nidaa-portrait.jpg'
+export const TAGLINE = 'Business Coach | Entrepreneur | Visionary'
 
-export const INSTAGRAM_URL = 'https://www.instagram.com/USERNAME'
+export const INSTAGRAM_URL =
+  'https://www.instagram.com/ryweckn?igsh=NnEydDFrNDZ2Mnk3'
 
-export const EMAIL = 'hello@nidaa.co'
+export const EMAIL = 'hello@nidaaryweck.com'
 
 export const WHATSAPP_URL = 'https://wa.me/0000000000'
 
@@ -17,6 +17,4 @@ export const BOOK_SESSION_URL = '#contact'
 
 export const SOCIAL_LINKS = {
   instagram: INSTAGRAM_URL,
-  linkedin: 'https://www.linkedin.com/in/USERNAME',
-  twitter: 'https://twitter.com/USERNAME',
 } as const

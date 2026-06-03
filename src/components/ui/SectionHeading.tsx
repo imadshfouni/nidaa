@@ -1,12 +1,12 @@
 import { motion } from 'framer-motion'
 
-type SectionHeadingProps = {
+type Props = {
   eyebrow?: string
   title: string
   description?: string
   align?: 'center' | 'left'
-  className?: string
   light?: boolean
+  className?: string
 }
 
 export function SectionHeading({
@@ -14,32 +14,41 @@ export function SectionHeading({
   title,
   description,
   align = 'center',
-  className = '',
   light = false,
-}: SectionHeadingProps) {
-  const alignClass = align === 'center' ? 'text-center mx-auto' : 'text-left'
-  const titleClass = light ? 'text-cream' : 'text-navy'
-  const descClass = light ? 'text-cream/75' : 'text-charcoal/65'
+  className = '',
+}: Props) {
+  const alignCls = align === 'center' ? 'mx-auto text-center' : 'text-left'
 
   return (
-    <motion.div
-      className={`mb-14 max-w-3xl ${alignClass} ${className}`}
-      initial={{ opacity: 0, y: 24 }}
+    <motion.header
+      className={`mb-16 max-w-3xl ${alignCls} ${className}`}
+      initial={{ opacity: 0, y: 28 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: '-80px' }}
-      transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
+      transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
     >
-      {eyebrow && <p className={`eyebrow mb-4 ${light ? 'text-gold-light' : ''}`}>{eyebrow}</p>}
+      {eyebrow && (
+        <>
+          <p className={`eyebrow mb-4 ${light ? 'text-gold-light' : ''}`}>{eyebrow}</p>
+          <div className={`gold-line mb-8 ${align === 'center' ? 'mx-auto' : ''}`} />
+        </>
+      )}
       <h2
-        className={`font-display text-3xl font-semibold tracking-tight sm:text-4xl lg:text-[2.75rem] lg:leading-tight ${titleClass}`}
+        className={`font-display text-[2.25rem] font-semibold leading-[1.15] tracking-tight sm:text-4xl lg:text-5xl ${
+          light ? 'text-ivory' : 'text-navy'
+        }`}
       >
         {title}
       </h2>
       {description && (
-        <p className={`mt-4 text-base leading-relaxed sm:text-lg ${descClass}`}>
+        <p
+          className={`mt-5 text-base leading-relaxed sm:text-lg ${
+            light ? 'text-ivory/75' : 'text-muted'
+          }`}
+        >
           {description}
         </p>
       )}
-    </motion.div>
+    </motion.header>
   )
 }

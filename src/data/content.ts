@@ -6,7 +6,6 @@ import {
   Briefcase,
   Compass,
   Eye,
-  Flag,
   HeartHandshake,
   Lightbulb,
   LineChart,
@@ -19,41 +18,40 @@ import {
 } from 'lucide-react'
 
 export const navLinks = [
+  { label: 'Home', href: '#home' },
   { label: 'About', href: '#about' },
   { label: 'Services', href: '#services' },
-  { label: 'Approach', href: '#approach' },
+  { label: 'Method', href: '#method' },
   { label: 'Testimonials', href: '#testimonials' },
   { label: 'Contact', href: '#contact' },
 ] as const
 
 export const hero = {
-  headline:
-    'Empowering Leaders, Entrepreneurs, and Dreamers to Build Their Next Level',
+  headline: 'Build Your Next Level with Nidaa Ryweck',
   subheadline:
-    'Nidaa is a business coach, entrepreneur, and visionary dedicated to helping individuals unlock clarity, confidence, and strategic growth.',
-  ctaPrimary: 'Work With Nidaa',
-  ctaSecondary: 'Discover Her Story',
+    'Nidaa Ryweck is a business coach, entrepreneur, and visionary leader helping ambitious people gain clarity, build confidence, and turn ideas into meaningful growth.',
+  ctaPrimary: 'Work With Nidaa Ryweck',
+  ctaInstagram: 'Follow on Instagram',
+  badges: ['Business Coach', 'Entrepreneur', 'Visionary Leader'] as const,
+}
+
+export const about = {
+  title: 'Meet Nidaa Ryweck',
+  paragraphs: [
+    'Nidaa Ryweck partners with entrepreneurs, founders, and professionals who refuse to settle for confusion, hesitation, or small thinking. As a business coach and entrepreneur, she understands what it takes to build with intention — and the mindset required to lead through pressure and opportunity.',
+    'Her work blends strategic clarity with confidence-building coaching, helping clients define what matters, make decisive moves, and grow businesses aligned with their vision. She guides people to turn ideas into action and ambition into measurable progress.',
+    'Whether you are launching, scaling, or stepping into a new chapter of leadership, Nidaa Ryweck offers a premium partnership built on trust, perspective, and transformation that lasts.',
+  ],
+  quote: 'Growth starts when clarity meets action.',
+  highlights: [
+    { title: 'Business Coaching', description: 'Strategic guidance for decisions, growth, and execution.' },
+    { title: 'Entrepreneurial Mindset', description: 'Build resilience, focus, and ownership at every stage.' },
+    { title: 'Visionary Leadership', description: 'Lead with purpose, presence, and long-term impact.' },
+  ],
 } as const
 
-export const aboutRoles = [
-  'Business Coach',
-  'Entrepreneur',
-  'Visionary',
-  'Mentor',
-] as const
-
-export const aboutParagraphs = [
-  'With a deep belief that leadership begins within, Nidaa partners with ambitious professionals and founders who are ready to move from vision to execution. Her work blends strategic clarity with the mindset shifts required to lead with confidence in competitive markets.',
-  'As an entrepreneur herself, she understands the pressure of building something meaningful — and the discipline it takes to grow with purpose. She helps clients turn ideas into action, strengthen decision-making, and build businesses aligned with their values.',
-  'Whether you are scaling a venture, stepping into leadership, or redefining your next chapter, Nidaa offers a grounded, visionary partnership designed for lasting transformation.',
-] as const
-
-export const missionVision = {
-  mission:
-    'To guide ambitious individuals and entrepreneurs toward clarity, growth, and meaningful success.',
-  vision:
-    'To inspire a new generation of leaders who think bigger, act with confidence, and build impactful businesses.',
-} as const
+export const brandStatement =
+  'Nidaa Ryweck’s mission is to guide ambitious individuals toward clarity, confidence, and meaningful success.'
 
 export type Service = {
   title: string
@@ -65,115 +63,109 @@ export const services: Service[] = [
   {
     title: 'Business Coaching',
     description:
-      'Strategic guidance to refine your model, priorities, and growth plan with clarity and confidence.',
+      'Refine your priorities, offers, and growth strategy with a coach who understands the founder journey.',
     icon: Briefcase,
-  },
-  {
-    title: 'Personal Growth & Mindset',
-    description:
-      'Break through limiting beliefs and build the resilience to lead through change and uncertainty.',
-    icon: Brain,
   },
   {
     title: 'Leadership Development',
     description:
-      'Strengthen your presence, communication, and decision-making as a leader people trust.',
+      'Strengthen how you lead teams, conversations, and high-stakes decisions with calm authority.',
     icon: Users,
+  },
+  {
+    title: 'Mindset & Confidence',
+    description:
+      'Release self-doubt, build inner stability, and show up with the confidence your vision demands.',
+    icon: Brain,
   },
   {
     title: 'Entrepreneurial Strategy',
     description:
-      'From idea to execution — structure your vision, offers, and roadmap for sustainable growth.',
+      'Structure your next moves — from market positioning to execution plans that compound results.',
     icon: Rocket,
   },
   {
-    title: 'Brand & Vision Clarity',
+    title: 'Brand Vision & Clarity',
     description:
-      'Align your personal brand and business narrative with the impact you want to create.',
+      'Align your personal brand and business narrative with the impact you are here to create.',
     icon: Eye,
   },
   {
     title: 'Goal Setting & Accountability',
     description:
-      'Turn ambition into measurable milestones with focused support and consistent follow-through.',
+      'Transform ambition into focused milestones with consistent support and honest accountability.',
     icon: Target,
   },
 ]
 
-export const benefits = [
-  {
-    title: 'Clear strategic direction',
-    description:
-      'Cut through noise with priorities, plans, and decisions rooted in your long-term vision.',
-    icon: Compass,
-  },
-  {
-    title: 'Personalized coaching approach',
-    description:
-      'Sessions tailored to your goals, industry, and stage — never one-size-fits-all templates.',
-    icon: HeartHandshake,
-  },
-  {
-    title: 'Entrepreneurial mindset',
-    description:
-      'Think like a builder: resourceful, adaptive, and focused on opportunities that compound.',
-    icon: Lightbulb,
-  },
-  {
-    title: 'Practical business guidance',
-    description:
-      'Actionable frameworks you can apply immediately — not theory without implementation.',
-    icon: BarChart3,
-  },
-  {
-    title: 'Confidence & leadership growth',
-    description:
-      'Develop the inner steadiness and outer presence to lead teams and conversations with impact.',
-    icon: Award,
-  },
-  {
-    title: 'Vision-driven transformation',
-    description:
-      'Align daily actions with a bigger purpose so growth feels meaningful, not mechanical.',
-    icon: Sparkles,
-  },
-]
-
-export const approachSteps = [
+export const methodSteps = [
   {
     step: '01',
     title: 'Clarity',
     description:
-      'Define what success looks like — values, vision, and the priorities that matter most right now.',
+      'Define your vision, values, and non-negotiables so every decision moves you toward what matters.',
     icon: Eye,
   },
   {
     step: '02',
     title: 'Strategy',
     description:
-      'Design a focused plan with milestones, resources, and decisions that support your next level.',
+      'Build a focused roadmap with priorities, resources, and milestones designed for real-world results.',
     icon: LineChart,
   },
   {
     step: '03',
-    title: 'Action',
+    title: 'Mindset',
     description:
-      'Move from planning to doing with accountability, momentum, and practical weekly execution.',
-    icon: Zap,
+      'Strengthen belief, emotional discipline, and leadership identity to sustain momentum under pressure.',
+    icon: Brain,
   },
   {
     step: '04',
-    title: 'Growth',
+    title: 'Action',
     description:
-      'Measure progress, refine tactics, and expand capacity as results and confidence compound.',
-    icon: TrendingUp,
+      'Move from planning to execution with weekly accountability and practical next steps.',
+    icon: Zap,
   },
   {
     step: '05',
-    title: 'Transformation',
+    title: 'Growth',
     description:
-      'Integrate new habits, leadership identity, and business outcomes that last beyond the program.',
-    icon: Flag,
+      'Measure progress, refine your approach, and scale outcomes with confidence and purpose.',
+    icon: TrendingUp,
+  },
+]
+
+export const whyWorkWith = [
+  {
+    title: 'Personalized guidance',
+    description: 'Coaching shaped around your goals, industry, and season — never generic scripts.',
+    icon: HeartHandshake,
+  },
+  {
+    title: 'Clear strategy',
+    description: 'Cut through overwhelm with priorities and plans you can act on immediately.',
+    icon: Compass,
+  },
+  {
+    title: 'Real business perspective',
+    description: 'Insights from someone who builds, leads, and understands entrepreneurial reality.',
+    icon: BarChart3,
+  },
+  {
+    title: 'Confidence-building coaching',
+    description: 'Develop the inner steadiness to lead, pitch, negotiate, and decide with conviction.',
+    icon: Award,
+  },
+  {
+    title: 'Practical action steps',
+    description: 'Every session ends with clarity on what to do next — not inspiration without execution.',
+    icon: Lightbulb,
+  },
+  {
+    title: 'Vision-driven transformation',
+    description: 'Align daily work with a bigger purpose so growth feels meaningful and sustainable.',
+    icon: Sparkles,
   },
 ]
 
@@ -186,26 +178,33 @@ export type Testimonial = {
 export const testimonials: Testimonial[] = [
   {
     quote:
-      'Nidaa helped me see my business with fresh eyes. Within weeks I had a clearer offer, stronger messaging, and the confidence to pitch to partners I had been avoiding for months.',
-    name: 'Sarah M.',
-    role: 'Founder, Wellness Studio',
+      'Working with Nidaa Ryweck gave me the structure I was missing. Within a month I had a clearer offer, stronger boundaries, and the confidence to raise my prices without second-guessing myself.',
+    name: 'Client Name',
+    role: 'Founder',
   },
   {
     quote:
-      'Her coaching is direct and compassionate. I stopped overthinking every decision and started leading my team with a calm, strategic mindset that my staff immediately noticed.',
-    name: 'James K.',
-    role: 'Operations Director',
+      'She doesn’t just motivate — she strategizes. Nidaa helped me reorganize my priorities, delegate with intention, and lead my team from a place of calm authority instead of constant firefighting.',
+    name: 'Client Name',
+    role: 'Entrepreneur',
   },
   {
     quote:
-      'Working with Nidaa was the turning point in my entrepreneurial journey. She blends mindset work with real business strategy — exactly what I needed to scale with purpose.',
-    name: 'Layla H.',
-    role: 'E-commerce Entrepreneur',
+      'The Nidaa Method changed how I approach my business. Clarity, mindset, action — it all connected. I finally feel like I am building something aligned with who I am and where I want to go.',
+    name: 'Client Name',
+    role: 'Founder',
   },
 ]
 
-export const ctaSection = {
-  headline: 'Ready to Build Your Next Level?',
-  text: 'Start your journey with Nidaa and take the next step toward clarity, confidence, and growth.',
-  button: 'Book a Session',
+export const instagramSection = {
+  title: 'Follow Nidaa Ryweck’s Journey',
+  text: 'Get daily inspiration, business insights, mindset guidance, and behind-the-scenes moments from Nidaa Ryweck’s journey.',
+  button: 'Follow Nidaa Ryweck on Instagram',
+} as const
+
+export const finalCta = {
+  headline: 'Ready to Step Into Your Next Level?',
+  text: 'Start your journey with Nidaa Ryweck and discover the clarity, confidence, and strategy you need to grow.',
+  primary: 'Book a Session',
+  secondary: 'Contact Nidaa Ryweck',
 } as const
