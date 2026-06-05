@@ -30,8 +30,8 @@ export function Header() {
   return (
     <header className={`fixed inset-x-0 top-0 z-50 transition-all duration-500 ${shell}`}>
       <div className="container-premium flex h-[72px] items-center justify-between gap-8 px-5 lg:px-14">
-        <a href="#home" className="shrink-0">
-          <Logo />
+        <a href="#home" className="shrink-0 transition-opacity hover:opacity-90">
+          <Logo size="md" />
         </a>
 
         <nav className="hidden items-center gap-8 lg:flex" aria-label="Main">

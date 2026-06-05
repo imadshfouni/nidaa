@@ -11,7 +11,7 @@ export function Footer() {
       <div className="container-premium px-5 py-20 lg:px-14">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
-            <Logo />
+            <Logo size="lg" />
             <p className="mt-4 text-sm text-blue">{BRAND_TITLE}</p>
             <p className="mt-4 max-w-sm text-sm leading-relaxed text-muted">
               A complete AI-powered learning ecosystem. Project-led, not video-soup.

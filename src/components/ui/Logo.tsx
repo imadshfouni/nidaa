@@ -2,16 +2,25 @@ import { BRAND_NAME } from '@/config/site'
 
 type LogoProps = {
   className?: string
-  height?: number
+  size?: 'sm' | 'md' | 'lg'
 }
 
-export function Logo({ className = '', height = 44 }: LogoProps) {
+const sizes = {
+  sm: 'h-8 sm:h-9',
+  md: 'h-9 sm:h-11',
+  lg: 'h-11 sm:h-14',
+}
+
+export function Logo({ className = '', size = 'md' }: LogoProps) {
   return (
     <img
       src="/logo-with-txt.svg"
       alt={BRAND_NAME}
-      height={height}
-      className={`h-9 w-auto sm:h-11 ${className}`}
+      width={160}
+      height={44}
+      decoding="async"
+      fetchPriority="high"
+      className={`w-auto ${sizes[size]} ${className}`}
     />
   )
 }
