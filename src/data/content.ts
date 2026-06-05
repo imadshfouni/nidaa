@@ -1,132 +1,234 @@
-import type { LucideIcon } from 'lucide-react'
-import {
-  Bot,
-  Brain,
-  Coins,
-  Globe,
-  GraduationCap,
-  LineChart,
-  Palette,
-  Sparkles,
-  TrendingUp,
-  Zap,
-} from 'lucide-react'
-
 export const navLinks = [
-  { label: 'Home', href: '#home' },
-  { label: 'How It Works', href: '#story' },
   { label: 'Paths', href: '#paths' },
-  { label: 'Platform', href: '#platform' },
-  { label: 'AI Mentor', href: '#mentor' },
+  { label: 'Features', href: '#inside-app' },
+  { label: 'Certification', href: '#certification' },
+  { label: 'FAQ', href: '#faq' },
 ] as const
 
 export const hero = {
-  badge: 'The future is yours to build',
-  headline: ['Build the Future.', 'Learn AI, Business & Digital Skills.'],
+  badge: 'Live in 175 countries · 11 languages',
+  headline: 'The way you learn is about to',
+  headlineAccent: 'change.',
   subheadline:
-    'brAInify is an AI-powered learning ecosystem that helps you learn, practice, build projects, and prepare for real opportunities.',
-  ctaPrimary: 'Start Learning',
-  ctaSecondary: 'Explore Paths',
+    "brAInify isn't another course platform. It's a complete AI-powered learning ecosystem that guides you from foundation to mastery.",
+  downloadLabel: 'Download the app · Free to start',
+  ecosystemLink: 'Or see how the ecosystem works →',
+  ecosystemHref: '#features',
+  highlights: [
+    'Project-led, not video-soup',
+    'Built-in AI mentor',
+    'Earn certified proof of skill',
+  ],
 } as const
 
-export const storySteps = [
-  {
-    step: '01',
-    title: 'Learn',
-    description: 'Master AI, business, and digital skills through structured, expert-designed lessons.',
-    icon: Brain,
-  },
-  {
-    step: '02',
-    title: 'Practice',
-    description: 'Apply knowledge with hands-on exercises, simulations, and real-world scenarios.',
-    icon: Zap,
-  },
-  {
-    step: '03',
-    title: 'Build',
-    description: 'Create portfolio projects that prove your skills and open doors to opportunities.',
-    icon: Sparkles,
-  },
-  {
-    step: '04',
-    title: 'Grow',
-    description: 'Track progress, earn certificates, and advance with personalized AI guidance.',
-    icon: TrendingUp,
-  },
+export const brandStatement = {
+  headline: "YouTube videos. Saved posts. Half-finished courses.",
+  accent: "Information isn't your problem. Structure is.",
+  subtext:
+    "brAInify was built to fix the one thing the rest of the internet can't: a system that actually finishes you.",
+} as const
+
+export const educators = [
+  { name: 'Ryan', specialty: 'AI', image: '/images/educators/ryan.png' },
+  { name: 'Sarah', specialty: 'Content Creator', image: '/images/educators/sarah.png' },
+  { name: 'Adam', specialty: 'Digital Marketing', image: '/images/educators/adam.png' },
+  { name: 'Daniel', specialty: 'Financial Literacy', image: '/images/educators/daniel.png' },
+  { name: 'Steve', specialty: 'Digital Economy', image: '/images/educators/steve.png' },
+  { name: 'Luke', specialty: 'AI Youth', image: '/images/educators/luke.png' },
+  { name: 'Carol', specialty: 'Tools', image: '/images/educators/carol.png' },
 ] as const
 
 export type LearningPath = {
+  id: string
   title: string
+  subtitle: string
+  educator: string
   description: string
-  icon: LucideIcon
-  gradient: string
+  image: string
+  accentColor: string
+  tags: string[]
 }
 
 export const learningPaths: LearningPath[] = [
   {
+    id: 'ai',
     title: 'AI Path',
-    description: 'Master artificial intelligence, automation, and the tools shaping tomorrow.',
-    icon: Bot,
-    gradient: 'from-blue/20 to-violet/20',
+    subtitle: 'Builders & Operators',
+    educator: 'Ryan',
+    description:
+      'Understand, use, and build with AI. Automate your work, design smarter workflows, and turn AI fluency into real opportunity.',
+    image: '/learning-path/ai-path.png',
+    accentColor: '#4a9eff',
+    tags: ['Ship real AI automations', 'Design smarter workflows', 'Turn fluency into income'],
   },
   {
-    title: 'Creator Path',
-    description: 'Build your brand, create content, and monetize your creative vision.',
-    icon: Palette,
-    gradient: 'from-violet/20 to-blue/20',
+    id: 'creator',
+    title: 'Content Creator Path',
+    subtitle: 'Creators & Founders',
+    educator: 'Sarah',
+    description:
+      'Build your brand, create content that converts, and monetize your creative vision with modern tools and strategy.',
+    image: '/learning-path/content-creator.png',
+    accentColor: '#c084fc',
+    tags: ['Build a personal brand', 'Create content that converts', 'Monetize your audience'],
   },
   {
+    id: 'marketing',
     title: 'Digital Marketing Path',
-    description: 'Learn growth strategies, analytics, and campaigns that drive real results.',
-    icon: LineChart,
-    gradient: 'from-blue/20 to-blue-glow/20',
+    subtitle: 'Marketers & Growth',
+    educator: 'Adam',
+    description:
+      'Master growth strategies, analytics, and campaigns that drive real results for brands and businesses.',
+    image: '/learning-path/digital-marketing.png',
+    accentColor: '#34d399',
+    tags: ['Run data-driven campaigns', 'Master growth analytics', 'Scale what works'],
   },
   {
-    title: 'Financial Literacy Path',
-    description: 'Understand money, investing, and building long-term financial freedom.',
-    icon: Coins,
-    gradient: 'from-violet/20 to-violet-glow/20',
+    id: 'finance',
+    title: 'Financial Intelligence Path',
+    subtitle: 'Wealth-Builders',
+    educator: 'Daniel',
+    description:
+      'Understand money, investing, and building long-term financial freedom in the digital age.',
+    image: '/learning-path/financial-literacy.png',
+    accentColor: '#fbbf24',
+    tags: ['Build financial literacy', 'Understand investing', 'Plan for long-term wealth'],
   },
   {
+    id: 'economy',
     title: 'Digital Economy Path',
-    description: 'Navigate the new economy with e-commerce, platforms, and digital business models.',
-    icon: Globe,
-    gradient: 'from-blue/20 to-violet/20',
+    subtitle: 'On-Chain Natives',
+    educator: 'Steve',
+    description:
+      'Navigate the new economy with e-commerce, platforms, and digital business models built for tomorrow.',
+    image: '/learning-path/digital-currency.png',
+    accentColor: '#f97316',
+    tags: ['Understand digital commerce', 'Build on-chain fluency', 'Monetize new platforms'],
   },
   {
-    title: 'Youth Path',
-    description: 'Start early with skills designed for the next generation of leaders.',
-    icon: GraduationCap,
-    gradient: 'from-violet/20 to-blue/20',
+    id: 'youth',
+    title: 'AI Youth Path',
+    subtitle: 'Teens & Parents',
+    educator: 'Luke',
+    description:
+      'Start early with skills designed for the next generation of leaders — parent-approved and future-ready.',
+    image: '/learning-path/youth.png',
+    accentColor: '#22d3ee',
+    tags: ['Learn AI fundamentals', 'Build creative confidence', 'Parent-approved pacing'],
   },
 ]
 
-export const platformFeatures = [
-  { label: 'Continue Learning', value: 'AI Fundamentals — Module 4' },
-  { label: 'AI Mentor', value: '3 new recommendations' },
-  { label: 'Progress', value: '68% complete' },
-  { label: 'Projects', value: '2 in progress' },
-  { label: 'Certificates', value: '1 earned' },
+export const platformFeatures = {
+  left: [
+    {
+      title: 'Track your progress',
+      description: 'Units, chapters, and a clear 0–100% path.',
+    },
+    {
+      title: 'Lessons + simulations',
+      description: 'Learn the idea, then practice it live.',
+    },
+    {
+      title: 'XP & streaks',
+      description: 'Daily wins that compound into real skill.',
+    },
+  ],
+  right: [
+    {
+      title: 'AI mentor',
+      description: 'A 24/7 coach that adapts to your pace.',
+    },
+    {
+      title: 'AI Lab',
+      description: 'Build deployable projects with real tools.',
+    },
+    {
+      title: 'Certification',
+      description: 'Proof of work, backed by real builds.',
+    },
+  ],
+} as const
+
+export const aiTools = [
+  { name: 'Claude', description: 'Reasoning & Writing', logo: '/logos/claude.svg' },
+  { name: 'Descript', description: 'Audio & Video', logo: '/logos/descript.svg' },
+  { name: 'Perplexity', description: 'Research', logo: '/logos/perplexity.svg' },
+  { name: 'Relevance AI', description: 'Agents & Ops', logo: '/logos/relevance.svg' },
+  { name: 'n8n', description: 'Workflow Automation', logo: '/logos/n8n.svg' },
 ] as const
 
-export const aiMentor = {
-  userMessage: 'I want to learn AI automation.',
-  aiResponse:
-    "Great. I'll guide you step by step, track your progress, and help you build your first project.",
+export const languages = [
+  'English',
+  'Arabic',
+  'Hindi',
+  'French',
+  'Russian',
+  'Farsi',
+  'Tamil',
+  'Spanish',
+  'Sinhala',
+] as const
+
+export const certification = {
+  title: 'Proof of skill, not proof of attendance.',
+  description:
+    "Graduates don't just leave with a certificate — they leave with proof of work. Each certification is awarded for completing a real system build and passing a practical validation, not for watching a video to the end.",
+  points: [
+    'Project-validated, not quiz-validated',
+    'Real systems shipped to your portfolio',
+    'KHDA-accredited certification coming via Dubai Government',
+  ],
 } as const
 
 export const stats = [
-  { value: 5000, suffix: '+', label: 'learners' },
-  { value: 20, suffix: '+', label: 'countries' },
-  { value: 200, suffix: '+', label: 'lessons' },
-  { value: 6, suffix: '', label: 'learning paths' },
-  { value: 100, suffix: '+', label: 'projects built' },
+  { value: 175, suffix: '', label: 'Countries live' },
+  { value: 11, suffix: '', label: 'Languages' },
+  { value: 6, suffix: '', label: 'Career paths' },
+  { value: 6, suffix: '', label: 'Ecosystem features' },
+] as const
+
+export const faq = [
+  {
+    question: "I'm a complete beginner. Is this for me?",
+    answer:
+      'Yes. Every path begins at foundation. By the time you reach the build stage you\'ll have the vocabulary, projects, and confidence to use real tools without faking it.',
+  },
+  {
+    question: 'How is this different from the 100 AI courses online?',
+    answer:
+      'Most courses are content. brAInify is an ecosystem: project-led video, gamified paths, an Application Lab to actually build, micro lessons, an AI mentor, and certification on real work. The structure is what makes you finish.',
+  },
+  {
+    question: 'Will I actually finish?',
+    answer:
+      'The platform is engineered for adherence — bite-sized units, level progression, and an AI Mentor that catches you when you slip. Designed by educators, not just marketers.',
+  },
+  {
+    question: 'Is the AI Mentor really useful or a gimmick?',
+    answer:
+      "The mentor knows your path, current chapter, XP, and last sticking point. It's a tutor available at 6am before work and at midnight before a deadline. That's the difference between a chatbot and a coach.",
+  },
+  {
+    question: 'What language can I learn in?',
+    answer:
+      'English, Arabic, Hindi, French, Russian, Farsi, Tamil, Spanish, and Sinhala — without changing the curriculum.',
+  },
+  {
+    question: 'Is the certification recognised?',
+    answer:
+      'Certification is awarded on real project completion and skill validation — not attendance. KHDA accreditation via the Dubai Government is on the roadmap.',
+  },
+  {
+    question: 'Can teens use it?',
+    answer:
+      'Yes — the AI Youth Path is built specifically for young learners with parent-approved content and pacing.',
+  },
 ] as const
 
 export const finalCta = {
-  headline: 'Your future does not wait.',
-  subtext: 'Start building the skills that will define the next generation.',
-  ctaPrimary: 'Start Learning',
-  ctaSecondary: 'Explore Paths',
+  eyebrow: 'GET BRAINIFIED',
+  headline: 'OWN YOUR FUTURE',
+  subtext:
+    'Pick your path. Meet your AI mentor. Ship your first project this week — and own the future before it owns you.',
+  footer: 'iOS · Android · Live in 175 countries · 11 languages',
 } as const
