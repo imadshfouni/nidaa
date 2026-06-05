@@ -4,21 +4,20 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export function StatsSection() {
   return (
-    <section className="relative overflow-hidden border-y border-white/[0.06] bg-deep py-24 sm:py-32">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_100%_80%_at_50%_50%,rgba(47,124,255,0.05),transparent_70%)]" />
-
-      <div className="container-premium relative">
-        <div className="grid grid-cols-2 gap-12 lg:grid-cols-5 lg:gap-8">
+    <section className="border-y border-border bg-white section-padding">
+      <div className="container-premium">
+        <ScrollReveal className="mb-14 text-center">
+          <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">Trusted worldwide</h2>
+        </ScrollReveal>
+        <div className="grid grid-cols-2 gap-10 lg:grid-cols-5">
           {stats.map((stat, i) => (
-            <ScrollReveal key={stat.label} delay={i * 0.08} className="text-center">
+            <ScrollReveal key={stat.label} delay={i * 0.06} className="text-center">
               <AnimatedCounter
                 value={stat.value}
                 suffix={stat.suffix}
-                className="font-display block text-5xl font-bold tracking-[-0.02em] text-gradient sm:text-6xl lg:text-7xl"
+                className="font-display block text-5xl font-bold tracking-tight text-gradient sm:text-6xl"
               />
-              <p className="mt-3 text-xs font-semibold uppercase tracking-[0.18em] text-muted">
-                {stat.label}
-              </p>
+              <p className="mt-2 text-xs font-semibold uppercase tracking-wider text-muted">{stat.label}</p>
             </ScrollReveal>
           ))}
         </div>

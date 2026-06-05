@@ -2,7 +2,7 @@
 
 export const BRAND_NAME = 'brAInify'
 
-export const BRAND_TITLE = 'Harvard for the AI generation'
+export const BRAND_TITLE = 'Premium learning for the AI generation'
 
 export const APP_STORE_URL = 'https://apps.apple.com/ca/app/brainify-app/id6759913473'
 

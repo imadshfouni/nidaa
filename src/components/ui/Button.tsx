@@ -18,12 +18,12 @@ type ButtonProps = {
 
 const styles: Record<Variant, string> = {
   primary:
-    'bg-gradient-to-r from-blue to-blue-glow text-white border border-blue/40 shadow-[0_0_40px_-8px_rgba(47,124,255,0.6)] hover:shadow-[0_0_60px_-6px_rgba(47,124,255,0.8)]',
+    'bg-primary text-white shadow-[0_8px_30px_-8px_rgba(37,99,235,0.45)] hover:bg-primary-light hover:shadow-[0_12px_36px_-8px_rgba(37,99,235,0.5)]',
   secondary:
-    'bg-white/8 text-white border border-white/12 backdrop-blur-sm hover:bg-white/12 hover:border-white/20',
+    'bg-white text-ink border border-border shadow-sm hover:border-primary/20 hover:shadow-md',
   outline:
-    'bg-transparent text-white border border-white/20 hover:border-blue/50 hover:bg-blue/5',
-  ghost: 'text-muted hover:text-white hover:bg-white/5',
+    'bg-transparent text-ink border border-border hover:border-primary/30 hover:bg-primary/5',
+  ghost: 'text-muted hover:text-ink hover:bg-ink/5',
 }
 
 export function Button({
@@ -37,21 +37,14 @@ export function Button({
   magnetic = true,
 }: ButtonProps) {
   const reduced = useReducedMotion()
-  const magneticAnchor = useMagnetic<HTMLAnchorElement>(0.25)
-  const magneticButton = useMagnetic<HTMLButtonElement>(0.25)
+  const magneticAnchor = useMagnetic<HTMLAnchorElement>(0.2)
+  const magneticButton = useMagnetic<HTMLButtonElement>(0.2)
   const base =
     'inline-flex items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300'
   const classes = `${base} ${styles[variant]} ${className}`
 
-  const motionProps = reduced
-    ? {}
-    : {
-        whileHover: { scale: 1.02 },
-        whileTap: { scale: 0.98 },
-      }
-
-  const isExternal =
-    external || (href?.startsWith('http') && !href.startsWith('#'))
+  const motionProps = reduced ? {} : { whileHover: { scale: 1.02 }, whileTap: { scale: 0.98 } }
+  const isExternal = external || (href?.startsWith('http') && !href.startsWith('#'))
 
   if (href) {
     const magneticProps =
@@ -88,13 +81,7 @@ export function Button({
       : {}
 
   return (
-    <motion.button
-      type={type}
-      className={classes}
-      onClick={onClick}
-      {...motionProps}
-      {...magneticProps}
-    >
+    <motion.button type={type} className={classes} onClick={onClick} {...motionProps} {...magneticProps}>
       {children}
     </motion.button>
   )

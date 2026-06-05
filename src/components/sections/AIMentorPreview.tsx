@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { MessageCircle, Sparkles } from 'lucide-react'
 import { aiMentor } from '@/data/content'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
 import { useReducedMotion } from '@/hooks/useReducedMotion'
@@ -7,61 +8,60 @@ export function AIMentorPreview() {
   const reduced = useReducedMotion()
 
   return (
-    <section id="mentor" className="relative overflow-hidden bg-void section-padding">
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_50%,rgba(139,92,246,0.1),transparent_60%)]" />
-
-      <div className="container-premium relative">
-        <div className="grid items-center gap-16 lg:grid-cols-2 lg:gap-20">
+    <section id="mentor" className="bg-page section-padding">
+      <div className="container-premium">
+        <div className="grid items-center gap-16 lg:grid-cols-2">
           <ScrollReveal>
-            <p className="eyebrow mb-5">AI Mentor</p>
-            <h2 className="font-display text-4xl font-bold tracking-[-0.02em] sm:text-5xl lg:text-6xl">
-              Your personal coach,{' '}
-              <span className="text-gradient">built in</span>
+            <p className="eyebrow mb-4">AI Mentor</p>
+            <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl">
+              Your smart learning <span className="text-gradient">assistant</span>
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-muted">
-              The AI Mentor knows your path, tracks your progress, and guides you step by step —
-              available whenever you need it.
+            <p className="mt-5 text-lg text-muted">
+              A clean, intelligent coach that knows your path, tracks progress, and helps you build — not a gimmicky chatbot.
             </p>
 
-            {/* Chat preview alongside the real app */}
-            <div className="mt-10 space-y-4">
-              <div className="ml-auto max-w-[90%] rounded-2xl rounded-tr-md bg-white/[0.06] px-5 py-4">
-                <p className="text-sm text-white/90">{aiMentor.userMessage}</p>
+            <div className="card-light mt-10 space-y-4 p-6">
+              <div className="flex items-center gap-3 border-b border-border pb-4">
+                <div className="flex h-10 w-10 items-center justify-center rounded-xl bg-primary/10">
+                  <Sparkles className="h-5 w-5 text-primary" />
+                </div>
+                <div>
+                  <p className="font-semibold text-ink">AI Mentor</p>
+                  <p className="text-xs text-muted">Personalized · Always available</p>
+                </div>
               </div>
-              <div className="max-w-[95%] rounded-2xl rounded-tl-md border border-blue/20 bg-blue/10 px-5 py-4">
-                <p className="text-sm text-white/95">{aiMentor.aiResponse}</p>
+              <div className="ml-auto max-w-[90%] rounded-2xl rounded-tr-sm bg-slate-100 px-4 py-3">
+                <p className="text-sm text-ink">{aiMentor.userMessage}</p>
               </div>
-              <div className="flex items-center gap-2 px-1">
+              <div className="max-w-[95%] rounded-2xl rounded-tl-sm border border-primary/15 bg-primary/5 px-4 py-3">
+                <p className="text-sm text-ink">{aiMentor.aiResponse}</p>
+              </div>
+              <div className="flex items-center gap-2">
                 {[0, 1, 2].map((i) => (
                   <motion.span
                     key={i}
-                    className="h-1.5 w-1.5 rounded-full bg-blue"
-                    animate={reduced ? {} : { opacity: [0.2, 1, 0.2] }}
-                    transition={{ duration: 1.4, repeat: Infinity, delay: i * 0.2 }}
+                    className="h-1.5 w-1.5 rounded-full bg-primary/50"
+                    animate={reduced ? {} : { opacity: [0.3, 1, 0.3] }}
+                    transition={{ duration: 1.2, repeat: Infinity, delay: i * 0.2 }}
                   />
                 ))}
-                <span className="text-xs text-muted">AI Mentor is typing...</span>
+                <span className="text-xs text-muted">Typing...</span>
               </div>
             </div>
           </ScrollReveal>
 
-          <ScrollReveal delay={0.15}>
-            <div className="relative mx-auto max-w-[300px] lg:max-w-none lg:justify-self-end">
-              <div className="absolute inset-0 rounded-full bg-gradient-to-br from-blue/20 to-violet/10 blur-3xl" />
-              <motion.div
-                animate={reduced ? {} : { y: [0, -10, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: 'easeInOut' }}
-              >
-                <img
-                  src="/phone-app-img/AiMentor.png"
-                  alt="brAInify AI Mentor in the app"
-                  className="relative z-10 mx-auto w-[260px] object-contain sm:w-[280px] lg:w-[300px]"
-                  style={{ filter: 'drop-shadow(0 40px 80px rgba(0,50,180,0.5))' }}
-                  loading="lazy"
-                  width={300}
-                  height={620}
-                />
-              </motion.div>
+          <ScrollReveal delay={0.1}>
+            <div className="card-elevated relative mx-auto max-w-[300px] overflow-hidden p-3 lg:max-w-[320px]">
+              <div className="mb-3 flex items-center gap-2 px-2 pt-1">
+                <MessageCircle className="h-4 w-4 text-primary" />
+                <span className="text-xs font-medium text-muted">In the app</span>
+              </div>
+              <img
+                src="/phone-app-img/AiMentor.png"
+                alt="brAInify AI Mentor in the app"
+                className="w-full rounded-2xl"
+                loading="lazy"
+              />
             </div>
           </ScrollReveal>
         </div>

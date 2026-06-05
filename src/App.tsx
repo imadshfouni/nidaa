@@ -1,13 +1,13 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { HeroSection } from '@/components/sections/HeroSection'
-import { TrustedStrip } from '@/components/sections/TrustedStrip'
-import { JourneySection } from '@/components/sections/JourneySection'
+import { ValueProposition } from '@/components/sections/ValueProposition'
 import { LearningPathsSection } from '@/components/sections/LearningPathsSection'
-import { PlatformShowcase } from '@/components/sections/PlatformShowcase'
 import { AIMentorPreview } from '@/components/sections/AIMentorPreview'
-import { ToolsSection } from '@/components/sections/ToolsSection'
+import { PlatformShowcase } from '@/components/sections/PlatformShowcase'
+import { JourneySection } from '@/components/sections/JourneySection'
 import { StatsSection } from '@/components/sections/StatsSection'
+import { TestimonialsSection } from '@/components/sections/TestimonialsSection'
 import { CertificationSection } from '@/components/sections/CertificationSection'
 import { FAQSection } from '@/components/sections/FAQSection'
 import { CTASection } from '@/components/sections/CTASection'
@@ -18,13 +18,13 @@ function App() {
       <Header />
       <main>
         <HeroSection />
-        <TrustedStrip />
-        <JourneySection />
+        <ValueProposition />
         <LearningPathsSection />
-        <PlatformShowcase />
         <AIMentorPreview />
-        <ToolsSection />
+        <PlatformShowcase />
+        <JourneySection />
         <StatsSection />
+        <TestimonialsSection />
         <CertificationSection />
         <FAQSection />
         <CTASection />

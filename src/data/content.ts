@@ -2,21 +2,36 @@ import { Brain, Sparkles, TrendingUp, Zap } from 'lucide-react'
 import { getPathUrl } from '@/config/site'
 
 export const navLinks = [
-  { label: 'Journey', href: '#journey' },
   { label: 'Paths', href: '#paths' },
-  { label: 'Platform', href: '#platform' },
   { label: 'Mentor', href: '#mentor' },
+  { label: 'Platform', href: '#platform' },
+  { label: 'Journey', href: '#journey' },
   { label: 'FAQ', href: '#faq' },
 ] as const
 
 export const hero = {
-  badge: 'The future is yours to build',
-  headline: ['Build the Future.', 'Master AI, Business & Digital Skills.'],
+  badge: 'Premium learning for the AI generation',
+  headline: 'Build Your Future With AI.',
   subheadline:
-    'brAInify is an AI-powered learning ecosystem that helps learners build real skills, complete projects, and prepare for the digital economy.',
+    'brAInify helps the next generation learn AI, business, digital skills, financial literacy, and creator skills through a guided learning ecosystem.',
   ctaPrimary: 'Start Learning',
   ctaSecondary: 'Explore Paths',
 } as const
+
+export const valueProps = [
+  {
+    title: 'Project-led learning',
+    description: 'Learn by building real projects — not watching endless videos.',
+  },
+  {
+    title: 'AI mentor built in',
+    description: 'Personal guidance that adapts to your pace and keeps you on track.',
+  },
+  {
+    title: 'Certified proof of skill',
+    description: 'Earn credentials backed by real work, not just attendance.',
+  },
+] as const
 
 export const trustedStrip = {
   label: 'Trusted by learners across 20+ countries',
@@ -67,7 +82,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Builders & Operators',
     description: 'Master AI, automation, and the tools defining tomorrow.',
     image: '/learning-path/ai-path.png',
-    accentColor: '#2F7CFF',
+    accentColor: '#2563EB',
     href: getPathUrl('ai'),
   },
   {
@@ -76,7 +91,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Creators & Founders',
     description: 'Build your brand and monetize your creative vision.',
     image: '/learning-path/content-creator.png',
-    accentColor: '#8B5CF6',
+    accentColor: '#7C3AED',
     href: getPathUrl('creator'),
   },
   {
@@ -85,7 +100,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Marketers & Growth',
     description: 'Growth strategies and campaigns that drive real results.',
     image: '/learning-path/digital-marketing.png',
-    accentColor: '#22D3EE',
+    accentColor: '#06B6D4',
     href: getPathUrl('marketing'),
   },
   {
@@ -94,7 +109,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Wealth-Builders',
     description: 'Money, investing, and long-term financial freedom.',
     image: '/learning-path/financial-literacy.png',
-    accentColor: '#FBBF24',
+    accentColor: '#F59E0B',
     href: getPathUrl('finance'),
   },
   {
@@ -103,7 +118,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'On-Chain Natives',
     description: 'Navigate e-commerce and digital business models.',
     image: '/learning-path/digital-currency.png',
-    accentColor: '#F97316',
+    accentColor: '#EA580C',
     href: getPathUrl('economy'),
   },
   {
@@ -112,19 +127,10 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Teens & Parents',
     description: 'Future-ready skills for the next generation.',
     image: '/learning-path/youth.png',
-    accentColor: '#34D399',
+    accentColor: '#10B981',
     href: getPathUrl('youth'),
   },
 ]
-
-export const dashboardItems = [
-  { label: 'Continue Learning', value: 'AI Fundamentals — Module 4', progress: 68 },
-  { label: 'AI Mentor', value: '3 new recommendations' },
-  { label: 'Progress', value: '68% complete', progress: 68 },
-  { label: 'Projects', value: '2 in progress' },
-  { label: 'Certificates', value: '1 earned' },
-  { label: 'Live Sessions', value: 'Next: Thu 7pm GMT' },
-] as const
 
 export const aiMentor = {
   userMessage: 'I want to learn AI automation.',
@@ -132,12 +138,40 @@ export const aiMentor = {
     "Great. I'll guide you step by step, track your progress, and help you build your first project.",
 } as const
 
+export const platformFeatures = [
+  { title: 'Track your progress', description: 'Units, chapters, and a clear 0–100% path.' },
+  { title: 'Lessons + simulations', description: 'Learn the idea, then practice it live.' },
+  { title: 'AI mentor', description: 'A 24/7 coach that adapts to your pace.' },
+  { title: 'Projects & certificates', description: 'Proof of work, backed by real builds.' },
+] as const
+
 export const stats = [
   { value: 5000, suffix: '+', label: 'Learners' },
   { value: 20, suffix: '+', label: 'Countries' },
   { value: 200, suffix: '+', label: 'Lessons' },
   { value: 6, suffix: '', label: 'Learning Paths' },
   { value: 100, suffix: '+', label: 'Projects Built' },
+] as const
+
+export const testimonials = [
+  {
+    quote:
+      'brAInify gave me structure I never found on YouTube. I finished my first AI project in two weeks.',
+    name: 'Sarah M.',
+    role: 'Marketing Professional',
+  },
+  {
+    quote:
+      'The AI mentor feels like having a tutor who actually knows where I am in the course. Game changer.',
+    name: 'James K.',
+    role: 'Entrepreneur',
+  },
+  {
+    quote:
+      'Finally a platform that teaches real tools — Claude, n8n, everything I use at work now.',
+    name: 'Aisha R.',
+    role: 'AI Path Graduate',
+  },
 ] as const
 
 export const finalCta = {
