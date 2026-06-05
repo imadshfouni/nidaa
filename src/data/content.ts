@@ -1,4 +1,5 @@
 import { Brain, Sparkles, TrendingUp, Zap } from 'lucide-react'
+import { getPathUrl } from '@/config/site'
 
 export const navLinks = [
   { label: 'Journey', href: '#journey' },
@@ -56,6 +57,7 @@ export type LearningWorld = {
   description: string
   image: string
   accentColor: string
+  href: string
 }
 
 export const learningWorlds: LearningWorld[] = [
@@ -66,6 +68,7 @@ export const learningWorlds: LearningWorld[] = [
     description: 'Master AI, automation, and the tools defining tomorrow.',
     image: '/learning-path/ai-path.png',
     accentColor: '#2F7CFF',
+    href: getPathUrl('ai'),
   },
   {
     id: 'creator',
@@ -74,6 +77,7 @@ export const learningWorlds: LearningWorld[] = [
     description: 'Build your brand and monetize your creative vision.',
     image: '/learning-path/content-creator.png',
     accentColor: '#8B5CF6',
+    href: getPathUrl('creator'),
   },
   {
     id: 'marketing',
@@ -82,6 +86,7 @@ export const learningWorlds: LearningWorld[] = [
     description: 'Growth strategies and campaigns that drive real results.',
     image: '/learning-path/digital-marketing.png',
     accentColor: '#22D3EE',
+    href: getPathUrl('marketing'),
   },
   {
     id: 'finance',
@@ -90,6 +95,7 @@ export const learningWorlds: LearningWorld[] = [
     description: 'Money, investing, and long-term financial freedom.',
     image: '/learning-path/financial-literacy.png',
     accentColor: '#FBBF24',
+    href: getPathUrl('finance'),
   },
   {
     id: 'economy',
@@ -98,6 +104,7 @@ export const learningWorlds: LearningWorld[] = [
     description: 'Navigate e-commerce and digital business models.',
     image: '/learning-path/digital-currency.png',
     accentColor: '#F97316',
+    href: getPathUrl('economy'),
   },
   {
     id: 'youth',
@@ -106,6 +113,7 @@ export const learningWorlds: LearningWorld[] = [
     description: 'Future-ready skills for the next generation.',
     image: '/learning-path/youth.png',
     accentColor: '#34D399',
+    href: getPathUrl('youth'),
   },
 ]
 
@@ -151,6 +159,9 @@ export const certification = {
   title: 'Proof of skill, not proof of attendance.',
   description:
     "Graduates don't just leave with a certificate — they leave with proof of work. Each certification is awarded for completing a real system build and passing a practical validation.",
+  image: '/images/certificate.png',
+  imageAlt: 'brAInify professional certificate sample',
+  caption: 'Sample certificate · Issued on real project completion',
   points: [
     'Project-validated, not quiz-validated',
     'Real systems shipped to your portfolio',

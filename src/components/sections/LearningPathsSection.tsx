@@ -11,8 +11,11 @@ function WorldCard({ world, index }: { world: (typeof learningWorlds)[number]; i
   return (
     <ScrollReveal delay={index * 0.08} className="h-full">
       <TiltCard intensity={8} className="h-full">
-        <motion.article
-          className="group relative flex h-full min-h-[420px] flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:border-white/20 hover:shadow-[0_24px_80px_-20px_rgba(47,124,255,0.35)]"
+        <motion.a
+          href={world.href}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="group relative flex h-full min-h-[420px] cursor-pointer flex-col overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] transition-all duration-500 hover:border-blue/30 hover:shadow-[0_24px_80px_-20px_rgba(47,124,255,0.35)]"
           whileHover={reduced ? {} : { y: -4 }}
         >
           <div className="relative h-52 overflow-hidden sm:h-56">
@@ -24,7 +27,7 @@ function WorldCard({ world, index }: { world: (typeof learningWorlds)[number]; i
             />
             <img
               src={world.image}
-              alt=""
+              alt={world.title}
               className="absolute bottom-0 left-1/2 h-40 w-40 -translate-x-1/2 object-contain transition-transform duration-500 group-hover:scale-110 sm:h-44 sm:w-44"
               loading="lazy"
             />
@@ -46,7 +49,7 @@ function WorldCard({ world, index }: { world: (typeof learningWorlds)[number]; i
               <ArrowUpRight size={16} />
             </span>
           </div>
-        </motion.article>
+        </motion.a>
       </TiltCard>
     </ScrollReveal>
   )

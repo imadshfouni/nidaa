@@ -1,6 +1,7 @@
 import { Check } from 'lucide-react'
 import { certification } from '@/data/content'
 import { ScrollReveal } from '@/components/ui/ScrollReveal'
+import { TiltCard } from '@/components/ui/TiltCard'
 
 export function CertificationSection() {
   return (
@@ -8,9 +9,9 @@ export function CertificationSection() {
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_70%_50%,rgba(47,124,255,0.08),transparent_60%)]" />
 
       <div className="container-premium relative">
-        <div className="grid items-center gap-12 lg:grid-cols-2">
+        <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16">
           <ScrollReveal>
-            <p className="eyebrow mb-3 !text-emerald-200/80">brAInify Certification</p>
+            <p className="eyebrow mb-3">brAInify Certification</p>
             <h2 className="font-display text-3xl font-bold tracking-tight sm:text-4xl">
               {certification.title}
             </h2>
@@ -27,26 +28,22 @@ export function CertificationSection() {
           </ScrollReveal>
 
           <ScrollReveal delay={0.15}>
-            <div className="glass-strong relative mx-auto max-w-md overflow-hidden rounded-2xl p-8 text-center">
-              <div className="absolute inset-0 bg-gradient-to-br from-blue/10 to-violet/5" />
-              <div className="relative">
-                <div className="mx-auto mb-6 flex h-20 w-20 items-center justify-center rounded-full border border-blue/30 bg-blue/10">
-                  <svg viewBox="0 0 24 24" className="h-10 w-10 text-blue" fill="none" aria-hidden="true">
-                    <path
-                      d="M12 2l2.4 7.4H22l-6.2 4.5 2.4 7.4L12 17l-6.2 4.3 2.4-7.4L2 9.4h7.6L12 2z"
-                      stroke="currentColor"
-                      strokeWidth="1.5"
-                      strokeLinejoin="round"
-                      fill="rgba(74,158,255,0.1)"
-                    />
-                  </svg>
+            <TiltCard intensity={6}>
+              <div className="relative mx-auto max-w-lg">
+                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-br from-blue/15 to-violet/10 blur-2xl" />
+                <div className="glass-strong glow-ring relative overflow-hidden rounded-2xl p-3 sm:p-4">
+                  <img
+                    src={certification.image}
+                    alt={certification.imageAlt}
+                    className="w-full rounded-xl object-contain shadow-2xl"
+                    loading="lazy"
+                    width={600}
+                    height={420}
+                  />
+                  <p className="mt-4 text-center text-xs text-muted">{certification.caption}</p>
                 </div>
-                <p className="font-display text-xl font-bold">brAInify Certified</p>
-                <p className="mt-2 text-sm text-muted">
-                  Sample certificate · Issued on real project completion
-                </p>
               </div>
-            </div>
+            </TiltCard>
           </ScrollReveal>
         </div>
       </div>
