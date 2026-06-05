@@ -116,6 +116,16 @@
     animation: pulse-glow 6s ease-in-out infinite;
   }
 
+  @keyframes hero-float {
+    0%,
+    100% {
+      transform: translateY(0);
+    }
+    50% {
+      transform: translateY(-14px);
+    }
+  }
+
   @keyframes float-slow {
     0%,
     100% {
