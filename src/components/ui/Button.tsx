@@ -1,7 +1,9 @@
 import { motion } from 'framer-motion'
 import type { ReactNode } from 'react'
+import { useMagnetic } from '@/hooks/useMagnetic'
+import { useReducedMotion } from '@/hooks/useReducedMotion'
 
-type Variant = 'primary' | 'secondary' | 'outline' | 'ghost' | 'instagram'
+type Variant = 'primary' | 'secondary' | 'outline' | 'ghost'
 
 type ButtonProps = {
   variant?: Variant
@@ -11,18 +13,17 @@ type ButtonProps = {
   onClick?: () => void
   external?: boolean
   type?: 'button' | 'submit' | 'reset'
+  magnetic?: boolean
 }
 
 const styles: Record<Variant, string> = {
   primary:
-    'bg-navy text-ivory border border-navy shadow-[0_12px_32px_-8px_rgba(12,18,34,0.45)] hover:bg-navy-mid',
+    'bg-blue text-white border border-blue/50 shadow-[0_0_40px_-8px_rgba(47,124,255,0.6)] hover:bg-blue-glow hover:shadow-[0_0_50px_-6px_rgba(47,124,255,0.7)]',
   secondary:
-    'bg-gold text-navy border border-gold-dark/20 shadow-[0_12px_32px_-8px_rgba(196,165,116,0.5)] hover:bg-gold-dark hover:text-ivory',
+    'bg-white/8 text-white border border-white/12 backdrop-blur-sm hover:bg-white/12 hover:border-white/20',
   outline:
-    'bg-transparent text-navy border-2 border-navy/15 hover:border-gold hover:bg-gold/5',
-  ghost: 'text-muted hover:text-navy hover:bg-navy/5',
-  instagram:
-    'bg-gradient-to-r from-[#f09433] via-[#e6683c] to-[#bc1888] text-white border-0 shadow-md hover:brightness-105',
+    'bg-transparent text-white border border-white/20 hover:border-blue/50 hover:bg-blue/5',
+  ghost: 'text-muted hover:text-white hover:bg-white/5',
 }
 
 export function Button({
@@ -33,21 +34,42 @@ export function Button({
   onClick,
   external = false,
   type = 'button',
+  magnetic = true,
 }: ButtonProps) {
+  const reduced = useReducedMotion()
+  const magneticAnchor = useMagnetic<HTMLAnchorElement>(0.25)
+  const magneticButton = useMagnetic<HTMLButtonElement>(0.25)
   const base =
     'inline-flex items-center justify-center gap-2.5 rounded-full px-7 py-3.5 text-sm font-semibold tracking-wide transition-all duration-300'
   const classes = `${base} ${styles[variant]} ${className}`
+
+  const motionProps = reduced
+    ? {}
+    : {
+        whileHover: { scale: 1.02 },
+        whileTap: { scale: 0.98 },
+      }
 
   const isExternal =
     external || (href?.startsWith('http') && !href.startsWith('#'))
 
   if (href) {
+    const magneticProps =
+      magnetic && !reduced
+        ? {
+            ref: magneticAnchor.ref,
+            onMouseMove: magneticAnchor.onMouseMove,
+            onMouseLeave: magneticAnchor.onMouseLeave,
+            style: { transition: 'transform 0.2s ease-out' },
+          }
+        : {}
+
     return (
       <motion.a
         href={href}
         className={classes}
-        whileHover={{ y: -2 }}
-        whileTap={{ scale: 0.98 }}
+        {...motionProps}
+        {...magneticProps}
         {...(isExternal ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       >
         {children}
@@ -55,8 +77,24 @@ export function Button({
     )
   }
 
+  const magneticProps =
+    magnetic && !reduced
+      ? {
+          ref: magneticButton.ref,
+          onMouseMove: magneticButton.onMouseMove,
+          onMouseLeave: magneticButton.onMouseLeave,
+          style: { transition: 'transform 0.2s ease-out' },
+        }
+      : {}
+
   return (
-    <motion.button type={type} className={classes} onClick={onClick} whileHover={{ y: -2 }} whileTap={{ scale: 0.98 }}>
+    <motion.button
+      type={type}
+      className={classes}
+      onClick={onClick}
+      {...motionProps}
+      {...magneticProps}
+    >
       {children}
     </motion.button>
   )

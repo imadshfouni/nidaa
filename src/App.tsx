@@ -1,15 +1,12 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
 import { Hero } from '@/components/sections/Hero'
-import { About } from '@/components/sections/About'
-import { BrandStatement } from '@/components/sections/BrandStatement'
-import { Services } from '@/components/sections/Services'
-import { Method } from '@/components/sections/Method'
-import { WhyWorkWith } from '@/components/sections/WhyWorkWith'
-import { Testimonials } from '@/components/sections/Testimonials'
-import { InstagramSection } from '@/components/sections/InstagramSection'
+import { StorySection } from '@/components/sections/StorySection'
+import { PathsSection } from '@/components/sections/PathsSection'
+import { PlatformShowcase } from '@/components/sections/PlatformShowcase'
+import { AIMentorSection } from '@/components/sections/AIMentorSection'
+import { StatsSection } from '@/components/sections/StatsSection'
 import { FinalCTA } from '@/components/sections/FinalCTA'
-import { Contact } from '@/components/sections/Contact'
 
 function App() {
   return (
@@ -17,15 +14,12 @@ function App() {
       <Header />
       <main>
         <Hero />
-        <About />
-        <BrandStatement />
-        <Services />
-        <Method />
-        <WhyWorkWith />
-        <Testimonials />
-        <InstagramSection />
+        <StorySection />
+        <PathsSection />
+        <PlatformShowcase />
+        <AIMentorSection />
+        <StatsSection />
         <FinalCTA />
-        <Contact />
       </main>
       <Footer />
     </>

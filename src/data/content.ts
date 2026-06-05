@@ -1,210 +1,132 @@
 import type { LucideIcon } from 'lucide-react'
 import {
-  Award,
-  BarChart3,
+  Bot,
   Brain,
-  Briefcase,
-  Compass,
-  Eye,
-  HeartHandshake,
-  Lightbulb,
+  Coins,
+  Globe,
+  GraduationCap,
   LineChart,
-  Rocket,
+  Palette,
   Sparkles,
-  Target,
   TrendingUp,
-  Users,
   Zap,
 } from 'lucide-react'
 
 export const navLinks = [
   { label: 'Home', href: '#home' },
-  { label: 'About', href: '#about' },
-  { label: 'Services', href: '#services' },
-  { label: 'Method', href: '#method' },
-  { label: 'Testimonials', href: '#testimonials' },
-  { label: 'Contact', href: '#contact' },
+  { label: 'How It Works', href: '#story' },
+  { label: 'Paths', href: '#paths' },
+  { label: 'Platform', href: '#platform' },
+  { label: 'AI Mentor', href: '#mentor' },
 ] as const
 
 export const hero = {
-  headline: 'Build Your Next Level with Nidaa Ryweck',
+  badge: 'The future is yours to build',
+  headline: ['Build the Future.', 'Learn AI, Business & Digital Skills.'],
   subheadline:
-    'Nidaa Ryweck is a business coach, entrepreneur, and visionary leader helping ambitious people gain clarity, build confidence, and turn ideas into meaningful growth.',
-  ctaPrimary: 'Work With Nidaa Ryweck',
-  ctaInstagram: 'Follow on Instagram',
-  badges: ['Business Coach', 'Entrepreneur', 'Visionary Leader'] as const,
-}
-
-export const about = {
-  title: 'Meet Nidaa Ryweck',
-  paragraphs: [
-    'Nidaa Ryweck partners with entrepreneurs, founders, and professionals who refuse to settle for confusion, hesitation, or small thinking. As a business coach and entrepreneur, she understands what it takes to build with intention — and the mindset required to lead through pressure and opportunity.',
-    'Her work blends strategic clarity with confidence-building coaching, helping clients define what matters, make decisive moves, and grow businesses aligned with their vision. She guides people to turn ideas into action and ambition into measurable progress.',
-    'Whether you are launching, scaling, or stepping into a new chapter of leadership, Nidaa Ryweck offers a premium partnership built on trust, perspective, and transformation that lasts.',
-  ],
-  quote: 'Growth starts when clarity meets action.',
-  highlights: [
-    { title: 'Business Coaching', description: 'Strategic guidance for decisions, growth, and execution.' },
-    { title: 'Entrepreneurial Mindset', description: 'Build resilience, focus, and ownership at every stage.' },
-    { title: 'Visionary Leadership', description: 'Lead with purpose, presence, and long-term impact.' },
-  ],
+    'brAInify is an AI-powered learning ecosystem that helps you learn, practice, build projects, and prepare for real opportunities.',
+  ctaPrimary: 'Start Learning',
+  ctaSecondary: 'Explore Paths',
 } as const
 
-export const brandStatement =
-  'Nidaa Ryweck’s mission is to guide ambitious individuals toward clarity, confidence, and meaningful success.'
-
-export type Service = {
-  title: string
-  description: string
-  icon: LucideIcon
-}
-
-export const services: Service[] = [
-  {
-    title: 'Business Coaching',
-    description:
-      'Refine your priorities, offers, and growth strategy with a coach who understands the founder journey.',
-    icon: Briefcase,
-  },
-  {
-    title: 'Leadership Development',
-    description:
-      'Strengthen how you lead teams, conversations, and high-stakes decisions with calm authority.',
-    icon: Users,
-  },
-  {
-    title: 'Mindset & Confidence',
-    description:
-      'Release self-doubt, build inner stability, and show up with the confidence your vision demands.',
-    icon: Brain,
-  },
-  {
-    title: 'Entrepreneurial Strategy',
-    description:
-      'Structure your next moves — from market positioning to execution plans that compound results.',
-    icon: Rocket,
-  },
-  {
-    title: 'Brand Vision & Clarity',
-    description:
-      'Align your personal brand and business narrative with the impact you are here to create.',
-    icon: Eye,
-  },
-  {
-    title: 'Goal Setting & Accountability',
-    description:
-      'Transform ambition into focused milestones with consistent support and honest accountability.',
-    icon: Target,
-  },
-]
-
-export const methodSteps = [
+export const storySteps = [
   {
     step: '01',
-    title: 'Clarity',
-    description:
-      'Define your vision, values, and non-negotiables so every decision moves you toward what matters.',
-    icon: Eye,
+    title: 'Learn',
+    description: 'Master AI, business, and digital skills through structured, expert-designed lessons.',
+    icon: Brain,
   },
   {
     step: '02',
-    title: 'Strategy',
-    description:
-      'Build a focused roadmap with priorities, resources, and milestones designed for real-world results.',
-    icon: LineChart,
-  },
-  {
-    step: '03',
-    title: 'Mindset',
-    description:
-      'Strengthen belief, emotional discipline, and leadership identity to sustain momentum under pressure.',
-    icon: Brain,
-  },
-  {
-    step: '04',
-    title: 'Action',
-    description:
-      'Move from planning to execution with weekly accountability and practical next steps.',
+    title: 'Practice',
+    description: 'Apply knowledge with hands-on exercises, simulations, and real-world scenarios.',
     icon: Zap,
   },
   {
-    step: '05',
-    title: 'Growth',
-    description:
-      'Measure progress, refine your approach, and scale outcomes with confidence and purpose.',
-    icon: TrendingUp,
-  },
-]
-
-export const whyWorkWith = [
-  {
-    title: 'Personalized guidance',
-    description: 'Coaching shaped around your goals, industry, and season — never generic scripts.',
-    icon: HeartHandshake,
-  },
-  {
-    title: 'Clear strategy',
-    description: 'Cut through overwhelm with priorities and plans you can act on immediately.',
-    icon: Compass,
-  },
-  {
-    title: 'Real business perspective',
-    description: 'Insights from someone who builds, leads, and understands entrepreneurial reality.',
-    icon: BarChart3,
-  },
-  {
-    title: 'Confidence-building coaching',
-    description: 'Develop the inner steadiness to lead, pitch, negotiate, and decide with conviction.',
-    icon: Award,
-  },
-  {
-    title: 'Practical action steps',
-    description: 'Every session ends with clarity on what to do next — not inspiration without execution.',
-    icon: Lightbulb,
-  },
-  {
-    title: 'Vision-driven transformation',
-    description: 'Align daily work with a bigger purpose so growth feels meaningful and sustainable.',
+    step: '03',
+    title: 'Build',
+    description: 'Create portfolio projects that prove your skills and open doors to opportunities.',
     icon: Sparkles,
   },
-]
+  {
+    step: '04',
+    title: 'Grow',
+    description: 'Track progress, earn certificates, and advance with personalized AI guidance.',
+    icon: TrendingUp,
+  },
+] as const
 
-export type Testimonial = {
-  quote: string
-  name: string
-  role: string
+export type LearningPath = {
+  title: string
+  description: string
+  icon: LucideIcon
+  gradient: string
 }
 
-export const testimonials: Testimonial[] = [
+export const learningPaths: LearningPath[] = [
   {
-    quote:
-      'Working with Nidaa Ryweck gave me the structure I was missing. Within a month I had a clearer offer, stronger boundaries, and the confidence to raise my prices without second-guessing myself.',
-    name: 'Client Name',
-    role: 'Founder',
+    title: 'AI Path',
+    description: 'Master artificial intelligence, automation, and the tools shaping tomorrow.',
+    icon: Bot,
+    gradient: 'from-blue/20 to-violet/20',
   },
   {
-    quote:
-      'She doesn’t just motivate — she strategizes. Nidaa helped me reorganize my priorities, delegate with intention, and lead my team from a place of calm authority instead of constant firefighting.',
-    name: 'Client Name',
-    role: 'Entrepreneur',
+    title: 'Creator Path',
+    description: 'Build your brand, create content, and monetize your creative vision.',
+    icon: Palette,
+    gradient: 'from-violet/20 to-blue/20',
   },
   {
-    quote:
-      'The Nidaa Method changed how I approach my business. Clarity, mindset, action — it all connected. I finally feel like I am building something aligned with who I am and where I want to go.',
-    name: 'Client Name',
-    role: 'Founder',
+    title: 'Digital Marketing Path',
+    description: 'Learn growth strategies, analytics, and campaigns that drive real results.',
+    icon: LineChart,
+    gradient: 'from-blue/20 to-blue-glow/20',
+  },
+  {
+    title: 'Financial Literacy Path',
+    description: 'Understand money, investing, and building long-term financial freedom.',
+    icon: Coins,
+    gradient: 'from-violet/20 to-violet-glow/20',
+  },
+  {
+    title: 'Digital Economy Path',
+    description: 'Navigate the new economy with e-commerce, platforms, and digital business models.',
+    icon: Globe,
+    gradient: 'from-blue/20 to-violet/20',
+  },
+  {
+    title: 'Youth Path',
+    description: 'Start early with skills designed for the next generation of leaders.',
+    icon: GraduationCap,
+    gradient: 'from-violet/20 to-blue/20',
   },
 ]
 
-export const instagramSection = {
-  title: 'Follow Nidaa Ryweck’s Journey',
-  text: 'Get daily inspiration, business insights, mindset guidance, and behind-the-scenes moments from Nidaa Ryweck’s journey.',
-  button: 'Follow Nidaa Ryweck on Instagram',
+export const platformFeatures = [
+  { label: 'Continue Learning', value: 'AI Fundamentals — Module 4' },
+  { label: 'AI Mentor', value: '3 new recommendations' },
+  { label: 'Progress', value: '68% complete' },
+  { label: 'Projects', value: '2 in progress' },
+  { label: 'Certificates', value: '1 earned' },
+] as const
+
+export const aiMentor = {
+  userMessage: 'I want to learn AI automation.',
+  aiResponse:
+    "Great. I'll guide you step by step, track your progress, and help you build your first project.",
 } as const
 
+export const stats = [
+  { value: 5000, suffix: '+', label: 'learners' },
+  { value: 20, suffix: '+', label: 'countries' },
+  { value: 200, suffix: '+', label: 'lessons' },
+  { value: 6, suffix: '', label: 'learning paths' },
+  { value: 100, suffix: '+', label: 'projects built' },
+] as const
+
 export const finalCta = {
-  headline: 'Ready to Step Into Your Next Level?',
-  text: 'Start your journey with Nidaa Ryweck and discover the clarity, confidence, and strategy you need to grow.',
-  primary: 'Book a Session',
-  secondary: 'Contact Nidaa Ryweck',
+  headline: 'Your future does not wait.',
+  subtext: 'Start building the skills that will define the next generation.',
+  ctaPrimary: 'Start Learning',
+  ctaSecondary: 'Explore Paths',
 } as const
