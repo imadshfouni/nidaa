@@ -21,7 +21,7 @@ export function HeroSection() {
     <section
       ref={ref}
       id="home"
-      className="relative flex min-h-screen items-center overflow-hidden bg-cinematic"
+      className="relative flex min-h-screen items-center overflow-x-hidden bg-cinematic"
     >
       <div className="bg-grid-fine absolute inset-0 opacity-50" />
       <BackgroundGlow />
