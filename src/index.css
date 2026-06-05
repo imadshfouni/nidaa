@@ -3,17 +3,17 @@
 @theme {
   --font-sans: 'Inter', system-ui, sans-serif;
   --font-display: 'Outfit', system-ui, sans-serif;
-  --color-deep: #05070d;
+  --color-void: #030712;
+  --color-deep: #050816;
+  --color-surface: rgba(255, 255, 255, 0.04);
   --color-navy: #0b1020;
-  --color-navy-light: #111827;
   --color-blue: #2f7cff;
   --color-blue-glow: #4d8fff;
   --color-violet: #8b5cf6;
   --color-violet-glow: #a78bfa;
+  --color-cyan: #22d3ee;
   --color-white: #ffffff;
   --color-muted: #aab3c5;
-  --color-glass: rgba(255, 255, 255, 0.12);
-  --color-glass-bg: rgba(255, 255, 255, 0.04);
 }
 
 @layer base {
@@ -25,10 +25,18 @@
     html {
       scroll-behavior: auto;
     }
+
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
   }
 
   body {
-    @apply m-0 min-h-screen overflow-x-hidden bg-deep font-sans text-white antialiased;
+    @apply m-0 min-h-screen overflow-x-hidden bg-void font-sans text-white antialiased;
   }
 
   ::selection {
@@ -42,7 +50,7 @@
   }
 
   .section-padding {
-    @apply px-5 py-28 sm:px-8 md:py-32 lg:px-14 xl:px-20;
+    @apply px-5 py-32 sm:px-8 md:py-40 lg:px-14 xl:px-20;
   }
 
   .container-premium {
@@ -50,62 +58,81 @@
   }
 
   .eyebrow {
-    @apply text-[11px] font-semibold uppercase tracking-[0.28em] text-blue;
+    @apply text-[11px] font-semibold uppercase tracking-[0.32em] text-blue;
   }
 
   .glass {
-    @apply rounded-2xl border border-white/12 bg-white/[0.04] backdrop-blur-xl;
+    @apply rounded-2xl border border-white/10 bg-white/[0.04] backdrop-blur-xl;
   }
 
   .glass-strong {
-    @apply rounded-2xl border border-white/12 bg-white/[0.06] shadow-[0_8px_40px_-12px_rgba(47,124,255,0.15)] backdrop-blur-2xl;
+    @apply rounded-2xl border border-white/10 bg-white/[0.06] shadow-[0_8px_40px_-12px_rgba(47,124,255,0.12)] backdrop-blur-2xl;
   }
 
   .text-gradient {
-    @apply bg-gradient-to-r from-blue via-blue-glow to-violet bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-blue via-cyan to-violet bg-clip-text text-transparent;
   }
 
-  .text-gradient-subtle {
+  .text-gradient-hero {
     @apply bg-gradient-to-br from-white via-white to-muted bg-clip-text text-transparent;
   }
 
   .glow-blue {
     box-shadow:
-      0 0 60px -12px rgba(47, 124, 255, 0.45),
-      0 0 120px -24px rgba(139, 92, 246, 0.25);
+      0 0 80px -20px rgba(47, 124, 255, 0.5),
+      0 0 160px -40px rgba(139, 92, 246, 0.2);
   }
 
   .glow-ring {
     box-shadow:
-      0 0 0 1px rgba(255, 255, 255, 0.12),
-      0 0 40px -8px rgba(47, 124, 255, 0.35);
+      0 0 0 1px rgba(255, 255, 255, 0.1),
+      0 0 60px -10px rgba(47, 124, 255, 0.4);
   }
 
-  .bg-grid {
-    background-image:
-      linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-      linear-gradient(90deg, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-    background-size: 64px 64px;
-  }
-
-  .bg-radial-hero {
+  .bg-cinematic {
     background:
-      radial-gradient(ellipse 80% 60% at 50% -10%, rgba(47, 124, 255, 0.18), transparent 55%),
-      radial-gradient(ellipse 50% 40% at 80% 50%, rgba(139, 92, 246, 0.12), transparent 50%),
-      radial-gradient(ellipse 40% 30% at 10% 80%, rgba(47, 124, 255, 0.08), transparent 50%);
+      radial-gradient(ellipse 90% 70% at 50% -20%, rgba(47, 124, 255, 0.14), transparent 55%),
+      radial-gradient(ellipse 60% 50% at 100% 50%, rgba(139, 92, 246, 0.1), transparent 50%),
+      radial-gradient(ellipse 50% 40% at 0% 80%, rgba(34, 211, 238, 0.06), transparent 50%),
+      #030712;
+  }
+
+  .bg-grid-fine {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.025) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.025) 1px, transparent 1px);
+    background-size: 48px 48px;
   }
 
   .animate-marquee {
-    animation: marquee 30s linear infinite;
+    animation: marquee 40s linear infinite;
   }
 
-  @keyframes hero-float {
+  .animate-float-slow {
+    animation: float-slow 8s ease-in-out infinite;
+  }
+
+  .animate-pulse-glow {
+    animation: pulse-glow 6s ease-in-out infinite;
+  }
+
+  @keyframes float-slow {
     0%,
     100% {
       transform: translateY(0);
     }
     50% {
-      transform: translateY(-14px);
+      transform: translateY(-12px);
+    }
+  }
+
+  @keyframes pulse-glow {
+    0%,
+    100% {
+      opacity: 0.4;
+    }
+    50% {
+      opacity: 0.7;
     }
   }
 
@@ -119,7 +146,9 @@
   }
 
   @media (prefers-reduced-motion: reduce) {
-    .animate-marquee {
+    .animate-marquee,
+    .animate-float-slow,
+    .animate-pulse-glow {
       animation: none;
     }
   }

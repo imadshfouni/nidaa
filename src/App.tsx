@@ -1,31 +1,33 @@
 import { Header } from '@/components/layout/Header'
 import { Footer } from '@/components/layout/Footer'
-import { Hero } from '@/components/sections/Hero'
-import { BrandStatement } from '@/components/sections/BrandStatement'
-import { PathsSection } from '@/components/sections/PathsSection'
+import { HeroSection } from '@/components/sections/HeroSection'
+import { TrustedStrip } from '@/components/sections/TrustedStrip'
+import { JourneySection } from '@/components/sections/JourneySection'
+import { LearningPathsSection } from '@/components/sections/LearningPathsSection'
 import { PlatformShowcase } from '@/components/sections/PlatformShowcase'
+import { AIMentorPreview } from '@/components/sections/AIMentorPreview'
 import { ToolsSection } from '@/components/sections/ToolsSection'
-import { MultilingualSection } from '@/components/sections/MultilingualSection'
-import { CertificationSection } from '@/components/sections/CertificationSection'
 import { StatsSection } from '@/components/sections/StatsSection'
+import { CertificationSection } from '@/components/sections/CertificationSection'
 import { FAQSection } from '@/components/sections/FAQSection'
-import { FinalCTA } from '@/components/sections/FinalCTA'
+import { CTASection } from '@/components/sections/CTASection'
 
 function App() {
   return (
     <>
       <Header />
       <main>
-        <Hero />
-        <BrandStatement />
-        <PathsSection />
+        <HeroSection />
+        <TrustedStrip />
+        <JourneySection />
+        <LearningPathsSection />
         <PlatformShowcase />
+        <AIMentorPreview />
         <ToolsSection />
-        <MultilingualSection />
-        <CertificationSection />
         <StatsSection />
+        <CertificationSection />
         <FAQSection />
-        <FinalCTA />
+        <CTASection />
       </main>
       <Footer />
     </>

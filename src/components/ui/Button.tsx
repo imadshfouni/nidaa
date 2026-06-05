@@ -18,7 +18,7 @@ type ButtonProps = {
 
 const styles: Record<Variant, string> = {
   primary:
-    'bg-blue text-white border border-blue/50 shadow-[0_0_40px_-8px_rgba(47,124,255,0.6)] hover:bg-blue-glow hover:shadow-[0_0_50px_-6px_rgba(47,124,255,0.7)]',
+    'bg-gradient-to-r from-blue to-blue-glow text-white border border-blue/40 shadow-[0_0_40px_-8px_rgba(47,124,255,0.6)] hover:shadow-[0_0_60px_-6px_rgba(47,124,255,0.8)]',
   secondary:
     'bg-white/8 text-white border border-white/12 backdrop-blur-sm hover:bg-white/12 hover:border-white/20',
   outline:

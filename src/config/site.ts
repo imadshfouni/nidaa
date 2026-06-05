@@ -2,9 +2,7 @@
 
 export const BRAND_NAME = 'brAInify'
 
-export const BRAND_TITLE = 'Innovative Learning'
-
-export const TAGLINE = 'Live in 175 countries · 11 languages'
+export const BRAND_TITLE = 'Harvard for the AI generation'
 
 export const APP_STORE_URL = 'https://apps.apple.com/ca/app/brainify-app/id6759913473'
 
@@ -12,11 +10,8 @@ export const GOOGLE_PLAY_URL = 'https://play.google.com/store/apps/details?id=co
 
 export const LOGIN_URL = 'https://app.brainify.world'
 
-export const WATCH_URL = '#features'
+export const START_LEARNING_URL = '#paths'
+
+export const EXPLORE_PATHS_URL = '#paths'
 
 export const EMAIL = 'hello@brainify.com'
-
-export const SOCIAL_LINKS = {
-  twitter: 'https://twitter.com/brainify',
-  linkedin: 'https://linkedin.com/company/brainify',
-} as const
