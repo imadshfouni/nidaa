@@ -40,7 +40,7 @@ export function JourneySection() {
                       <p className="mt-3 text-muted">{step.description}</p>
                     </div>
                     <div className="absolute left-0 top-0 z-10 md:relative md:left-auto md:top-auto">
-                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-white shadow-md md:h-14 md:w-14">
+                      <div className="flex h-11 w-11 items-center justify-center rounded-2xl border border-border bg-surface-raised shadow-[0_0_20px_-6px_rgba(59,130,246,0.4)] md:h-14 md:w-14">
                         <Icon className="h-5 w-5 text-primary md:h-6 md:w-6" />
                       </div>
                     </div>

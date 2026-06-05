@@ -30,10 +30,10 @@ export function AIMentorPreview() {
                   <p className="text-xs text-muted">Personalized · Always available</p>
                 </div>
               </div>
-              <div className="ml-auto max-w-[90%] rounded-2xl rounded-tr-sm bg-slate-100 px-4 py-3">
+              <div className="ml-auto max-w-[90%] rounded-2xl rounded-tr-sm bg-white/8 px-4 py-3">
                 <p className="text-sm text-ink">{aiMentor.userMessage}</p>
               </div>
-              <div className="max-w-[95%] rounded-2xl rounded-tl-sm border border-primary/15 bg-primary/5 px-4 py-3">
+              <div className="max-w-[95%] rounded-2xl rounded-tl-sm border border-primary/25 bg-primary/10 px-4 py-3 shadow-[0_0_24px_-8px_rgba(59,130,246,0.4)]">
                 <p className="text-sm text-ink">{aiMentor.aiResponse}</p>
               </div>
               <div className="flex items-center gap-2">

@@ -82,7 +82,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Builders & Operators',
     description: 'Master AI, automation, and the tools defining tomorrow.',
     image: '/learning-path/ai-path.png',
-    accentColor: '#2563EB',
+    accentColor: '#60A5FA',
     href: getPathUrl('ai'),
   },
   {
@@ -91,7 +91,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Creators & Founders',
     description: 'Build your brand and monetize your creative vision.',
     image: '/learning-path/content-creator.png',
-    accentColor: '#7C3AED',
+    accentColor: '#C084FC',
     href: getPathUrl('creator'),
   },
   {
@@ -100,7 +100,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Marketers & Growth',
     description: 'Growth strategies and campaigns that drive real results.',
     image: '/learning-path/digital-marketing.png',
-    accentColor: '#06B6D4',
+    accentColor: '#22D3EE',
     href: getPathUrl('marketing'),
   },
   {
@@ -109,7 +109,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Wealth-Builders',
     description: 'Money, investing, and long-term financial freedom.',
     image: '/learning-path/financial-literacy.png',
-    accentColor: '#F59E0B',
+    accentColor: '#FBBF24',
     href: getPathUrl('finance'),
   },
   {
@@ -118,7 +118,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'On-Chain Natives',
     description: 'Navigate e-commerce and digital business models.',
     image: '/learning-path/digital-currency.png',
-    accentColor: '#EA580C',
+    accentColor: '#FB923C',
     href: getPathUrl('economy'),
   },
   {
@@ -127,7 +127,7 @@ export const learningWorlds: LearningWorld[] = [
     subtitle: 'Teens & Parents',
     description: 'Future-ready skills for the next generation.',
     image: '/learning-path/youth.png',
-    accentColor: '#10B981',
+    accentColor: '#34D399',
     href: getPathUrl('youth'),
   },
 ]

@@ -17,7 +17,7 @@ export function FAQSection() {
         <div className="space-y-3">
           {faq.map((item, i) => (
             <ScrollReveal key={item.question} delay={i * 0.04}>
-              <div className="overflow-hidden rounded-2xl border border-border bg-white">
+              <div className="overflow-hidden rounded-2xl border border-border bg-surface-raised">
                 <button type="button" onClick={() => setOpen(open === i ? null : i)} className="flex w-full items-center justify-between gap-4 px-5 py-4 text-left">
                   <span className="font-medium text-ink">{item.question}</span>
                   <ChevronDown className={`h-5 w-5 shrink-0 text-muted transition-transform ${open === i ? 'rotate-180' : ''}`} />

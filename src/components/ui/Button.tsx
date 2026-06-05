@@ -18,12 +18,12 @@ type ButtonProps = {
 
 const styles: Record<Variant, string> = {
   primary:
-    'bg-primary text-white shadow-[0_8px_30px_-8px_rgba(37,99,235,0.45)] hover:bg-primary-light hover:shadow-[0_12px_36px_-8px_rgba(37,99,235,0.5)]',
+    'bg-gradient-to-r from-primary via-cyan to-violet text-white shadow-[0_8px_32px_-8px_rgba(59,130,246,0.55)] hover:shadow-[0_12px_40px_-8px_rgba(34,211,238,0.5)]',
   secondary:
-    'bg-white text-ink border border-border shadow-sm hover:border-primary/20 hover:shadow-md',
+    'bg-white/5 text-ink border border-border backdrop-blur-sm hover:border-primary/40 hover:bg-white/8',
   outline:
-    'bg-transparent text-ink border border-border hover:border-primary/30 hover:bg-primary/5',
-  ghost: 'text-muted hover:text-ink hover:bg-ink/5',
+    'bg-transparent text-ink border border-border hover:border-cyan/40 hover:bg-cyan/5',
+  ghost: 'text-muted hover:text-ink hover:bg-white/5',
 }
 
 export function Button({

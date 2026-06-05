@@ -17,7 +17,7 @@ export function ValueProposition() {
         <div className="grid gap-6 md:grid-cols-3">
           {valueProps.map((item, i) => (
             <ScrollReveal key={item.title} delay={i * 0.08}>
-              <div className="card-light h-full p-8 transition-shadow duration-300 hover:shadow-[0_16px_48px_-16px_rgba(37,99,235,0.15)]">
+              <div className="card-light h-full p-8 transition-shadow duration-300 hover:shadow-[0_16px_48px_-16px_rgba(59,130,246,0.3)]">
                 <div className="mb-5 flex h-11 w-11 items-center justify-center rounded-2xl bg-primary/10 text-lg font-bold text-primary">
                   {i + 1}
                 </div>
@@ -38,7 +38,7 @@ export function ValueProposition() {
           >
             <div className="flex w-max animate-marquee gap-12">
               {partners.map((name, i) => (
-                <span key={`${name}-${i}`} className="shrink-0 text-sm font-semibold text-ink/20">
+                <span key={`${name}-${i}`} className="shrink-0 text-sm font-semibold text-white/20">
                   {name}
                 </span>
               ))}

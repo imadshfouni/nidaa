@@ -8,7 +8,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 export function CTASection() {
   return (
     <section className="relative overflow-hidden section-padding">
-      <div className="absolute inset-0 bg-gradient-to-br from-primary/8 via-cyan/5 to-violet/8 animate-gradient" />
+      <div className="absolute inset-0 bg-gradient-to-br from-primary/20 via-cyan/10 to-violet/15 animate-gradient" />
       <div className="container-premium relative">
         <ScrollReveal className="mx-auto max-w-3xl text-center">
           <h2 className="font-display text-4xl font-bold tracking-tight text-ink sm:text-5xl lg:text-6xl">

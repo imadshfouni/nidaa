@@ -4,7 +4,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export function CertificationSection() {
   return (
-    <section id="certification" className="bg-white section-padding">
+    <section id="certification" className="bg-surface section-padding">
       <div className="container-premium">
         <div className="grid items-center gap-12 lg:grid-cols-2">
           <ScrollReveal>

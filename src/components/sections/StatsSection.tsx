@@ -4,7 +4,7 @@ import { ScrollReveal } from '@/components/ui/ScrollReveal'
 
 export function StatsSection() {
   return (
-    <section className="border-y border-border bg-white section-padding">
+    <section className="border-y border-border bg-surface section-padding">
       <div className="container-premium">
         <ScrollReveal className="mb-14 text-center">
           <h2 className="font-display text-3xl font-bold text-ink sm:text-4xl">Trusted worldwide</h2>

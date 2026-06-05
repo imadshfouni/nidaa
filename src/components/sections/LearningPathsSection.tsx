@@ -15,13 +15,13 @@ function WorldCard({ world, index }: { world: (typeof learningWorlds)[number]; i
           href={world.href}
           target="_blank"
           rel="noopener noreferrer"
-          className="group flex h-full min-h-[380px] flex-col overflow-hidden rounded-3xl border border-border bg-white shadow-[0_8px_40px_-16px_rgba(15,23,42,0.1)] transition-all duration-300 hover:shadow-[0_24px_60px_-20px_rgba(37,99,235,0.2)]"
+          className="group flex h-full min-h-[380px] flex-col overflow-hidden rounded-3xl border border-border bg-surface-raised shadow-[0_8px_40px_-16px_rgba(59,130,246,0.2)] transition-all duration-300 hover:border-primary/30 hover:shadow-[0_24px_60px_-20px_rgba(59,130,246,0.35)]"
           whileHover={reduced ? {} : { y: -6 }}
         >
-          <div className="relative flex h-48 items-end justify-center overflow-hidden bg-gradient-to-b from-slate-50 to-white px-6 pt-8">
+          <div className="relative flex h-48 items-end justify-center overflow-hidden bg-gradient-to-b from-white/5 to-transparent px-6 pt-8">
             <div
-              className="absolute inset-0 opacity-60"
-              style={{ background: `radial-gradient(ellipse at 50% 100%, ${world.accentColor}18, transparent 70%)` }}
+              className="absolute inset-0 opacity-80"
+              style={{ background: `radial-gradient(ellipse at 50% 100%, ${world.accentColor}35, transparent 65%)` }}
             />
             <img src={world.image} alt={world.title} className="relative h-36 w-36 object-contain transition-transform duration-500 group-hover:scale-105" loading="lazy" />
           </div>
@@ -31,7 +31,7 @@ function WorldCard({ world, index }: { world: (typeof learningWorlds)[number]; i
             </p>
             <h3 className="font-display mt-2 text-2xl font-bold text-ink">{world.title}</h3>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-muted">{world.description}</p>
-            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-primary">
+            <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold" style={{ color: world.accentColor }}>
               Explore Path <ArrowUpRight size={16} />
             </span>
           </div>

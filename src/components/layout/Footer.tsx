@@ -6,12 +6,12 @@ import { AppStoreButtons } from '@/components/ui/AppStoreButtons'
 export function Footer() {
   const year = new Date().getFullYear()
   return (
-    <footer className="border-t border-border bg-white">
+    <footer className="border-t border-border bg-surface">
       <div className="container-premium px-5 py-16 lg:px-14">
         <div className="grid gap-12 lg:grid-cols-4">
           <div className="lg:col-span-2">
             <Logo size="lg" />
-            <p className="mt-3 text-sm text-primary">{BRAND_TITLE}</p>
+            <p className="mt-3 text-sm text-cyan">{BRAND_TITLE}</p>
             <p className="mt-4 max-w-sm text-sm text-muted">A premium learning platform for the AI generation.</p>
             <AppStoreButtons className="mt-6" />
           </div>

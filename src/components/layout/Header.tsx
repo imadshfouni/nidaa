@@ -22,7 +22,7 @@ export function Header() {
   }, [open])
 
   const shell = scrolled
-    ? 'border-b border-border bg-white/80 shadow-sm backdrop-blur-xl'
+    ? 'border-b border-border bg-page/85 shadow-[0_4px_30px_-10px_rgba(59,130,246,0.2)] backdrop-blur-xl'
     : 'border-b border-transparent bg-transparent'
 
   return (
@@ -50,10 +50,10 @@ export function Header() {
       </div>
       <AnimatePresence>
         {open && (
-          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden border-t border-border bg-white lg:hidden">
+          <motion.div initial={{ opacity: 0, height: 0 }} animate={{ opacity: 1, height: 'auto' }} exit={{ opacity: 0, height: 0 }} className="overflow-hidden border-t border-border bg-surface lg:hidden">
             <nav className="flex flex-col gap-1 px-5 py-5">
               {navLinks.map((l) => (
-                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-slate-50">
+                <a key={l.href} href={l.href} onClick={() => setOpen(false)} className="rounded-lg px-3 py-3 text-base font-medium text-ink hover:bg-white/5">
                   {l.label}
                 </a>
               ))}
